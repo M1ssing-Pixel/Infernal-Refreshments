@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmbdiom2qjc68"]
+
+[ext_resource type="PackedScene" uid="uid://dmjrbaf63sdv6" path="res://Save Scenes/Particle Scenes/TSC_RocketFuelParticle.tscn" id="1_ua4gs"]
+[ext_resource type="Texture2D" uid="uid://b5jg6ly3wrgd2" path="res://Sprites/ProteinKing.png" id="2_d40co"]
+
+[node name="RemovalParticle" instance=ExtResource("1_ua4gs")]
+texture = ExtResource("2_d40co")

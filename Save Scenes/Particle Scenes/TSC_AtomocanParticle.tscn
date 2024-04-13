@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://bfhfwyq7gn5ff"]
+
+[ext_resource type="Texture2D" uid="uid://d4nsoyjijru34" path="res://Sprites/Atomocan.png" id="1_qeovn"]
+[ext_resource type="Script" path="res://Scripts/SCR_ParticleDeleter.gd" id="2_6unpe"]
+
+[sub_resource type="Curve" id="Curve_iphb8"]
+min_value = 5.0
+max_value = 10.0
+_data = [Vector2(0, 5), 0.0, 5.0, 0, 1, Vector2(1, 10), 5.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_py8h4"]
+curve = SubResource("Curve_iphb8")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fogdp"]
+particle_flag_disable_z = true
+angle_min = -30.0
+angle_max = 30.0
+inherit_velocity_ratio = 1.0
+direction = Vector3(0, -1, 0)
+spread = 20.0
+initial_velocity_min = 80.0
+initial_velocity_max = 80.0
+angular_velocity_min = -30.0
+angular_velocity_max = 30.0
+angular_velocity_curve = SubResource("CurveTexture_py8h4")
+radial_velocity_min = 0.4
+radial_velocity_max = 0.65
+gravity = Vector3(0, 130, 0)
+linear_accel_min = 13.48
+linear_accel_max = 13.48
+
+[node name="RemovalParticle" type="GPUParticles2D"]
+z_index = 10
+texture_filter = 1
+emitting = false
+amount = 1
+process_material = SubResource("ParticleProcessMaterial_fogdp")
+texture = ExtResource("1_qeovn")
+lifetime = 3.0
+one_shot = true
+speed_scale = 1.25
+collision_base_size = 0.0
+script = ExtResource("2_6unpe")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

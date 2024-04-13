@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://chwu5w85qpa0w"]
+
+[ext_resource type="Texture2D" uid="uid://d4nsoyjijru34" path="res://Sprites/Atomocan.png" id="1_h63ae"]
+[ext_resource type="Script" path="res://Scripts/SCR_CanControl.gd" id="2_0ktkw"]
+[ext_resource type="Resource" uid="uid://q8h8dfocyt3s" path="res://Resources/Can Resources/RES_AtomocanStats.tres" id="3_n0ilk"]
+[ext_resource type="PackedScene" uid="uid://bfhfwyq7gn5ff" path="res://Save Scenes/Particle Scenes/TSC_AtomocanParticle.tscn" id="4_c15ir"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bnjf8"]
+radius = 16.0
+height = 46.0
+
+[node name="Atomocan" type="Sprite2D"]
+texture_filter = 1
+texture = ExtResource("1_h63ae")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(4, -2)
+script = ExtResource("2_0ktkw")
+get_resource = ExtResource("3_n0ilk")
+removal_particle = ExtResource("4_c15ir")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-4, -1)
+shape = SubResource("CapsuleShape2D_bnjf8")

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DemonStats" load_steps=2 format=3 uid="uid://cxdnn8vbpw62h"]
+
+[ext_resource type="Script" path="res://Resources/Demon Resources/SCR_DemonResource.gd" id="1_jq7ex"]
+
+[resource]
+script = ExtResource("1_jq7ex")
+red_value = 0
+blue_value = 0
+green_value = 6

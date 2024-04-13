@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://4mvbwrgfrwgi"]
+
+[ext_resource type="PackedScene" uid="uid://bfhfwyq7gn5ff" path="res://Save Scenes/Particle Scenes/TSC_AtomocanParticle.tscn" id="1_cwxhl"]
+[ext_resource type="Texture2D" uid="uid://c66bnjc1vy8dc" path="res://Sprites/BoozeJuice.png" id="2_oyf6v"]
+
+[node name="RemovalParticle" instance=ExtResource("1_cwxhl")]
+emitting = false
+texture = ExtResource("2_oyf6v")

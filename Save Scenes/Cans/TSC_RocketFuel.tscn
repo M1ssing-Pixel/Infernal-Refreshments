@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://f28g22imipw8"]
+
+[ext_resource type="PackedScene" uid="uid://ct0dbe2jsjtsd" path="res://Save Scenes/Cans/TSC_BurningCaffine.tscn" id="1_vimg4"]
+[ext_resource type="Texture2D" uid="uid://dinhbqnutwulc" path="res://Sprites/RocketFuel.png" id="2_udcbl"]
+[ext_resource type="Resource" uid="uid://csemlecfwvppk" path="res://Resources/Can Resources/RES_RocketFuelStats.tres" id="3_w056g"]
+[ext_resource type="PackedScene" uid="uid://dmjrbaf63sdv6" path="res://Save Scenes/Particle Scenes/TSC_RocketFuelParticle.tscn" id="4_8cl8b"]
+
+[node name="RocketFuel" instance=ExtResource("1_vimg4")]
+texture = ExtResource("2_udcbl")
+
+[node name="Area2D" parent="." index="0"]
+get_resource = ExtResource("3_w056g")
+removal_particle = ExtResource("4_8cl8b")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(-4, 2)

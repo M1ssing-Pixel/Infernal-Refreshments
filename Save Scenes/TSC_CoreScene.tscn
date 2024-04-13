@@ -1,0 +1,156 @@
+[gd_scene load_steps=12 format=3 uid="uid://b2tbkshptmuhw"]
+
+[ext_resource type="Script" path="res://Scripts/SCR_GameManager.gd" id="1_ny8u1"]
+[ext_resource type="Script" path="res://Scripts/SCR_LevelChange.gd" id="1_tu0os"]
+[ext_resource type="Resource" uid="uid://cxdnn8vbpw62h" path="res://Resources/Demon Resources/RES_GreenEmber.tres" id="3_io026"]
+[ext_resource type="Script" path="res://Scripts/SCR_ValueUI.gd" id="4_bre2d"]
+[ext_resource type="Texture2D" uid="uid://bjsq2wb0yrnb0" path="res://Sprites/Vending Machine.png" id="5_rpmpa"]
+[ext_resource type="FontFile" uid="uid://dcqp8lol48rsk" path="res://Font/alagard.ttf" id="6_ejq1g"]
+[ext_resource type="PackedScene" uid="uid://chwu5w85qpa0w" path="res://Save Scenes/Cans/TSC_Atomocan.tscn" id="8_5is6k"]
+[ext_resource type="Script" path="res://Scripts/SCR_LevelControl.gd" id="8_14ksr"]
+[ext_resource type="PackedScene" uid="uid://t70jmiaoo8kb" path="res://Save Scenes/Cans/TSC_ProteinKing.tscn" id="9_cxiek"]
+[ext_resource type="PackedScene" uid="uid://ct0dbe2jsjtsd" path="res://Save Scenes/Cans/TSC_BurningCaffine.tscn" id="10_831ne"]
+[ext_resource type="PackedScene" uid="uid://f28g22imipw8" path="res://Save Scenes/Cans/TSC_RocketFuel.tscn" id="11_81sbb"]
+
+[node name="CoreScene" type="Node2D"]
+
+[node name="Tutorial Level" type="Node2D" parent="."]
+script = ExtResource("1_tu0os")
+
+[node name="MainCamera" type="Camera2D" parent="Tutorial Level"]
+
+[node name="GameManager" type="Node" parent="Tutorial Level"]
+script = ExtResource("1_ny8u1")
+
+[node name="LevelControl" type="Node2D" parent="Tutorial Level"]
+script = ExtResource("8_14ksr")
+get_resource = ExtResource("3_io026")
+level_money = 10
+starting_red = 1.0
+starting_blue = 1.0
+
+[node name="UIControl" type="Control" parent="Tutorial Level"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ValueCanvas" type="CanvasLayer" parent="Tutorial Level/UIControl"]
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Tutorial Level/UIControl/ValueCanvas"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameUI" type="Control" parent="Tutorial Level/UIControl/ValueCanvas/AspectRatioContainer"]
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("4_bre2d")
+
+[node name="TextRed" type="RichTextLabel" parent="Tutorial Level/UIControl/ValueCanvas/AspectRatioContainer/GameUI"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -74.0
+offset_top = 11.0
+offset_right = 23.0
+offset_bottom = 51.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("6_ejq1g")
+theme_override_fonts/bold_font = ExtResource("6_ejq1g")
+theme_override_fonts/italics_font = ExtResource("6_ejq1g")
+theme_override_fonts/bold_italics_font = ExtResource("6_ejq1g")
+theme_override_fonts/mono_font = ExtResource("6_ejq1g")
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "[center]?? / 10"
+
+[node name="TextBlue" type="RichTextLabel" parent="Tutorial Level/UIControl/ValueCanvas/AspectRatioContainer/GameUI"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -74.0
+offset_top = 34.0
+offset_right = 23.0
+offset_bottom = 74.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("6_ejq1g")
+theme_override_fonts/bold_font = ExtResource("6_ejq1g")
+theme_override_fonts/italics_font = ExtResource("6_ejq1g")
+theme_override_fonts/bold_italics_font = ExtResource("6_ejq1g")
+theme_override_fonts/mono_font = ExtResource("6_ejq1g")
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "[center]?? / 10"
+
+[node name="TextGreen" type="RichTextLabel" parent="Tutorial Level/UIControl/ValueCanvas/AspectRatioContainer/GameUI"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -74.0
+offset_top = 57.0
+offset_right = 23.0
+offset_bottom = 97.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("6_ejq1g")
+theme_override_fonts/bold_font = ExtResource("6_ejq1g")
+theme_override_fonts/italics_font = ExtResource("6_ejq1g")
+theme_override_fonts/bold_italics_font = ExtResource("6_ejq1g")
+theme_override_fonts/mono_font = ExtResource("6_ejq1g")
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "[center]?? / 10"
+
+[node name="DemonText" type="RichTextLabel" parent="Tutorial Level/UIControl/ValueCanvas/AspectRatioContainer/GameUI"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 3.0
+offset_top = 142.0
+offset_right = 15.0
+offset_bottom = 191.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("6_ejq1g")
+theme_override_fonts/bold_font = ExtResource("6_ejq1g")
+theme_override_fonts/italics_font = ExtResource("6_ejq1g")
+theme_override_fonts/bold_italics_font = ExtResource("6_ejq1g")
+theme_override_fonts/mono_font = ExtResource("6_ejq1g")
+theme_override_font_sizes/normal_font_size = 13
+text = "1 2 3"
+
+[node name="MoneyText" type="RichTextLabel" parent="Tutorial Level/UIControl/ValueCanvas/AspectRatioContainer/GameUI"]
+unique_name_in_owner = true
+z_index = 9
+layout_mode = 0
+offset_left = 195.0
+offset_top = 164.0
+offset_right = 248.0
+offset_bottom = 204.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.231373, 0.501961, 0.301961, 1)
+theme_override_fonts/normal_font = ExtResource("6_ejq1g")
+theme_override_fonts/bold_font = ExtResource("6_ejq1g")
+theme_override_fonts/italics_font = ExtResource("6_ejq1g")
+theme_override_fonts/bold_italics_font = ExtResource("6_ejq1g")
+theme_override_fonts/mono_font = ExtResource("6_ejq1g")
+theme_override_font_sizes/normal_font_size = 16
+text = "10"
+
+[node name="VendingMachine" type="Sprite2D" parent="Tutorial Level/UIControl"]
+z_index = -100
+texture_filter = 1
+texture = ExtResource("5_rpmpa")
+
+[node name="Atomocan" parent="Tutorial Level" instance=ExtResource("8_5is6k")]
+position = Vector2(101, -7)
+
+[node name="ProteinKing" parent="Tutorial Level" instance=ExtResource("9_cxiek")]
+position = Vector2(25, -7)
+
+[node name="BurningCaffine" parent="Tutorial Level" instance=ExtResource("10_831ne")]
+position = Vector2(-13, -6)
+
+[node name="RocketFuel" parent="Tutorial Level" instance=ExtResource("11_81sbb")]
+position = Vector2(63, -10)
+
+[connection signal="Update_Values" from="Tutorial Level/GameManager" to="Tutorial Level/UIControl/ValueCanvas/AspectRatioContainer/GameUI" method="_on_game_manager_update_values"]
+[connection signal="LevelRules" from="Tutorial Level/LevelControl" to="Tutorial Level/GameManager" method="_on_level_control_level_rules"]
+[connection signal="LevelRules" from="Tutorial Level/LevelControl" to="Tutorial Level/UIControl/ValueCanvas/AspectRatioContainer/GameUI" method="_on_level_control_level_rules"]

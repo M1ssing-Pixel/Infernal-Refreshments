@@ -1,0 +1,14 @@
+[gd_scene load_steps=5 format=3 uid="uid://t70jmiaoo8kb"]
+
+[ext_resource type="PackedScene" uid="uid://c27lnqi410cn6" path="res://Save Scenes/Cans/TSC_BoozeJuice.tscn" id="1_3ty8m"]
+[ext_resource type="Texture2D" uid="uid://b5jg6ly3wrgd2" path="res://Sprites/ProteinKing.png" id="2_thmhb"]
+[ext_resource type="Resource" uid="uid://ocx5hv4vo7e5" path="res://Resources/Can Resources/RES_PorteinKingStats.tres" id="3_kfp6p"]
+[ext_resource type="PackedScene" uid="uid://dmbdiom2qjc68" path="res://Save Scenes/Particle Scenes/TSC_ProteinKingParticle.tscn" id="4_44xuu"]
+
+[node name="ProteinKing" instance=ExtResource("1_3ty8m")]
+texture = ExtResource("2_thmhb")
+
+[node name="Area2D" parent="." index="0"]
+position = Vector2(4, -1)
+get_resource = ExtResource("3_kfp6p")
+removal_particle = ExtResource("4_44xuu")

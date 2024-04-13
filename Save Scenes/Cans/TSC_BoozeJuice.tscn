@@ -1,0 +1,14 @@
+[gd_scene load_steps=5 format=3 uid="uid://c27lnqi410cn6"]
+
+[ext_resource type="PackedScene" uid="uid://chwu5w85qpa0w" path="res://Save Scenes/Cans/TSC_Atomocan.tscn" id="1_lgyab"]
+[ext_resource type="Texture2D" uid="uid://c66bnjc1vy8dc" path="res://Sprites/BoozeJuice.png" id="2_sypcy"]
+[ext_resource type="Resource" uid="uid://d2ok0jhwvmav" path="res://Resources/Can Resources/RES_BoozeJuiceStats.tres" id="3_pan3u"]
+[ext_resource type="PackedScene" uid="uid://4mvbwrgfrwgi" path="res://Save Scenes/Particle Scenes/TSC_BoozeJuiceParticle.tscn" id="4_l6id8"]
+
+[node name="BoozeJuice" instance=ExtResource("1_lgyab")]
+texture = ExtResource("2_sypcy")
+
+[node name="Area2D" parent="." index="0"]
+position = Vector2(4, 2)
+get_resource = ExtResource("3_pan3u")
+removal_particle = ExtResource("4_l6id8")

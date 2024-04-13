@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CanStats" load_steps=2 format=3 uid="uid://ocx5hv4vo7e5"]
+
+[ext_resource type="Script" path="res://Resources/Can Resources/SCR_CanResource.gd" id="1_0rs1m"]
+
+[resource]
+script = ExtResource("1_0rs1m")
+red_value = -1.0
+blue_value = -1.0
+green_value = 3.0
+can_price = 3
