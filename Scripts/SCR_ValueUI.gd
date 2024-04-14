@@ -1,9 +1,11 @@
 extends Node
 
 var update_money
+var played_demon_sound: bool
 
 func _ready():
 	Datamanager.connect("send_ui_values", _send_ui_values)
+	played_demon_sound = false
 
 func _on_game_manager_update_values(get_red, get_blue, get_green, get_money):
 	%TextRed.text = str("[center]", get_red, " / 10")
@@ -34,3 +36,8 @@ func _on_game_manager_change_level():
 	#Fix this crap code later lol
 	var victory_layer = get_parent().get_parent().get_parent().get_child(2)
 	victory_layer.visible = true
+	
+	if played_demon_sound == false:
+		var demon_sfx = $"../../../../FallSFX/DemonSFX"
+		demon_sfx.play()
+		played_demon_sound = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ck47r42jmdrw4"]
+[gd_scene load_steps=11 format=3 uid="uid://ck47r42jmdrw4"]
 
 [ext_resource type="Script" path="res://Scripts/SCR_LevelChange.gd" id="1_xbk0r"]
 [ext_resource type="Script" path="res://Scripts/SCR_GameManager.gd" id="2_p6q27"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bjsq2wb0yrnb0" path="res://Sprites/Vending Machine.png" id="7_1e7q8"]
 [ext_resource type="Texture2D" uid="uid://2g71cq6iuhb1" path="res://Sprites/DemonColourShift.png" id="8_nsocg"]
 [ext_resource type="AudioStream" uid="uid://bbsb8o1hl8rfo" path="res://Sounds/SFX_CanFall.wav.wav" id="9_d1ntw"]
+[ext_resource type="AudioStream" uid="uid://om0hmhutgur6" path="res://Sounds/SFX_Demon.wav" id="10_rr53p"]
 
 [node name="TestingScene" type="Node2D"]
 script = ExtResource("1_xbk0r")
@@ -219,6 +220,9 @@ Press \"Enter\" for the next level!"
 stream = ExtResource("9_d1ntw")
 volume_db = -8.0
 pitch_scale = 1.5
+
+[node name="DemonSFX" type="AudioStreamPlayer" parent="FallSFX"]
+stream = ExtResource("10_rr53p")
 
 [connection signal="change_level" from="GameManager" to="." method="_on_game_manager_change_level"]
 [connection signal="change_level" from="GameManager" to="UIControl/ValueCanvas/AspectRatioContainer/GameUI" method="_on_game_manager_change_level"]
