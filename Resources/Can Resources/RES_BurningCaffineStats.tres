@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_5qndx")
-red_value = 1.0
-blue_value = 1.0
+red_value = -3.0
+blue_value = 3.0
 green_value = 1.0
-can_price = 2
+can_price = 3

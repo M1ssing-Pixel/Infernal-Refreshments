@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b5rv014m62o0d"]
+[gd_scene load_steps=3 format=3 uid="uid://b5rv014m62o0d"]
 
 [ext_resource type="FontFile" uid="uid://dcqp8lol48rsk" path="res://Font/alagard.ttf" id="1_6nv7r"]
+[ext_resource type="Script" path="res://Scripts/SCR_ReturnToMenu.gd" id="1_7lkl3"]
 
 [node name="ThanksSceneController" type="Control"]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_7lkl3")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -54,3 +56,18 @@ text = "
 
 
 [center]A LD55 Jam game by: MissingPixel"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = -56.0
+offset_top = 1.0
+offset_right = 124.0
+offset_bottom = 181.0
+theme_override_colors/default_color = Color(0.643137, 0.643137, 0.643137, 1)
+theme_override_fonts/normal_font = ExtResource("1_6nv7r")
+theme_override_fonts/bold_font = ExtResource("1_6nv7r")
+theme_override_fonts/italics_font = ExtResource("1_6nv7r")
+theme_override_fonts/bold_italics_font = ExtResource("1_6nv7r")
+theme_override_fonts/mono_font = ExtResource("1_6nv7r")
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "[center]Press enter"

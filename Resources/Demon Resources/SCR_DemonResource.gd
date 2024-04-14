@@ -1,7 +1,7 @@
 extends Resource
 
-class_name DemonStats
+class_name VicotryValues
 
-@export var red_value: int
-@export var blue_value: int
-@export var green_value: int
+@export var red_value: float
+@export var blue_value: float
+@export var green_value: float

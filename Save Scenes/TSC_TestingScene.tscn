@@ -102,9 +102,9 @@ text = "[center]?? / 10"
 [node name="DemonText" type="RichTextLabel" parent="UIControl/ValueCanvas/AspectRatioContainer/GameUI"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 3.0
+offset_left = 1.0
 offset_top = 142.0
-offset_right = 15.0
+offset_right = 44.0
 offset_bottom = 191.0
 mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("6_iwprq")
@@ -113,7 +113,9 @@ theme_override_fonts/italics_font = ExtResource("6_iwprq")
 theme_override_fonts/bold_italics_font = ExtResource("6_iwprq")
 theme_override_fonts/mono_font = ExtResource("6_iwprq")
 theme_override_font_sizes/normal_font_size = 13
-text = "1 2 3"
+text = "1 
+2 
+3"
 
 [node name="MoneyText" type="RichTextLabel" parent="UIControl/ValueCanvas/AspectRatioContainer/GameUI"]
 unique_name_in_owner = true

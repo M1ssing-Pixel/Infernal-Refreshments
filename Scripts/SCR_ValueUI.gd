@@ -13,7 +13,7 @@ func _on_game_manager_update_values(get_red, get_blue, get_green, get_money):
 	%MoneyText.text = str(update_money)
 
 func _on_level_control_level_rules(get_red, get_blue, get_green, get_money, get_red_start, get_blue_start, get_green_start):
-	%DemonText.text = str(get_red, " ", get_blue, " ", get_green)
+	%DemonText.text = str(get_red, "\n" , get_blue, "\n", get_green)
 	%MoneyText.text = str(get_money)
 	update_money = get_money
 	

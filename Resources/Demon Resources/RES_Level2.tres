@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="DemonStats" load_steps=2 format=3 uid="uid://oh8seldayxex"]
+[gd_resource type="Resource" script_class="VicotryValues" load_steps=2 format=3 uid="uid://oh8seldayxex"]
 
 [ext_resource type="Script" path="res://Resources/Demon Resources/SCR_DemonResource.gd" id="1_3ajxn"]
 
 [resource]
 script = ExtResource("1_3ajxn")
-red_value = 3
-blue_value = 8
-green_value = 0
+red_value = 5
+blue_value = 9
+green_value = 7

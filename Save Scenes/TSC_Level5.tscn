@@ -1,5 +1,110 @@
-[gd_scene load_steps=2 format=3 uid="uid://cx31cfrs2kms4"]
+[gd_scene load_steps=18 format=3 uid="uid://cx31cfrs2kms4"]
 
 [ext_resource type="PackedScene" uid="uid://ck47r42jmdrw4" path="res://Save Scenes/TSC_TestingScene.tscn" id="1_s24na"]
+[ext_resource type="Resource" uid="uid://kg3ccdxhhjcv" path="res://Resources/Demon Resources/RES_Level5.tres" id="2_6n0ni"]
+[ext_resource type="Texture2D" uid="uid://b81bpte3fgnxw" path="res://Sprites/Demon.png" id="2_d4kw4"]
+[ext_resource type="PackedScene" uid="uid://ct0dbe2jsjtsd" path="res://Save Scenes/Cans/TSC_BurningCaffine.tscn" id="4_tatt7"]
+[ext_resource type="Shader" path="res://Save Scenes/Cans/SHA_Outline.gdshader" id="5_nkbh7"]
+[ext_resource type="PackedScene" uid="uid://chwu5w85qpa0w" path="res://Save Scenes/Cans/TSC_Atomocan.tscn" id="5_xvige"]
+[ext_resource type="PackedScene" uid="uid://c27lnqi410cn6" path="res://Save Scenes/Cans/TSC_BoozeJuice.tscn" id="6_mn4wk"]
+[ext_resource type="PackedScene" uid="uid://b55sgbj28xnh5" path="res://Save Scenes/Cans/TSC_Noki.tscn" id="7_lxwpm"]
+[ext_resource type="PackedScene" uid="uid://f28g22imipw8" path="res://Save Scenes/Cans/TSC_RocketFuel.tscn" id="8_8af4t"]
+[ext_resource type="PackedScene" uid="uid://t70jmiaoo8kb" path="res://Save Scenes/Cans/TSC_ProteinKing.tscn" id="9_t47n2"]
 
-[node name="TestingScene" instance=ExtResource("1_s24na")]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_asj0p"]
+shader = ExtResource("5_nkbh7")
+shader_parameter/strength = false
+shader_parameter/outline_colour = Color(1, 1, 1, 1)
+shader_parameter/outline_depth = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w5wgw"]
+shader = ExtResource("5_nkbh7")
+shader_parameter/strength = false
+shader_parameter/outline_colour = Color(1, 1, 1, 1)
+shader_parameter/outline_depth = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ydqlc"]
+shader = ExtResource("5_nkbh7")
+shader_parameter/strength = false
+shader_parameter/outline_colour = Color(1, 1, 1, 1)
+shader_parameter/outline_depth = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sgspn"]
+shader = ExtResource("5_nkbh7")
+shader_parameter/strength = false
+shader_parameter/outline_colour = Color(1, 1, 1, 1)
+shader_parameter/outline_depth = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wisn7"]
+shader = ExtResource("5_nkbh7")
+shader_parameter/strength = false
+shader_parameter/outline_colour = Color(1, 1, 1, 1)
+shader_parameter/outline_depth = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ra3vj"]
+shader = ExtResource("5_nkbh7")
+shader_parameter/strength = false
+shader_parameter/outline_colour = Color(1, 1, 1, 1)
+shader_parameter/outline_depth = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6c7oo"]
+shader = ExtResource("5_nkbh7")
+shader_parameter/strength = false
+shader_parameter/outline_colour = Color(1, 1, 1, 1)
+shader_parameter/outline_depth = 1.0
+
+[node name="Level5" instance=ExtResource("1_s24na")]
+
+[node name="LevelControl" parent="." index="2"]
+get_resource = ExtResource("2_6n0ni")
+level_money = 16
+starting_red = 8.0
+starting_blue = 5.0
+starting_green = 4.0
+
+[node name="Demon" parent="UIControl/VictoryLayer/AspectRatioContainer/VictoryUI" index="1"]
+modulate = Color(1, 1, 1, 1)
+texture = ExtResource("2_d4kw4")
+
+[node name="BurningCaffine" parent="." index="5" instance=ExtResource("4_tatt7")]
+material = SubResource("ShaderMaterial_asj0p")
+position = Vector2(-13, 46)
+
+[node name="Atomocan" parent="." index="6" instance=ExtResource("5_xvige")]
+material = SubResource("ShaderMaterial_w5wgw")
+position = Vector2(63, -58)
+
+[node name="BoozeJuice" parent="." index="7" instance=ExtResource("6_mn4wk")]
+material = SubResource("ShaderMaterial_ydqlc")
+position = Vector2(63, 43)
+
+[node name="Noki" parent="." index="8" instance=ExtResource("7_lxwpm")]
+material = SubResource("ShaderMaterial_sgspn")
+position = Vector2(-14, -6)
+
+[node name="RocketFuel" parent="." index="9" instance=ExtResource("8_8af4t")]
+position = Vector2(101, -10)
+
+[node name="RocketFuel2" parent="." index="10" instance=ExtResource("8_8af4t")]
+material = SubResource("ShaderMaterial_wisn7")
+position = Vector2(25, -62)
+
+[node name="Noki2" parent="." index="11" instance=ExtResource("7_lxwpm")]
+position = Vector2(101, -58)
+
+[node name="BoozeJuice2" parent="." index="12" instance=ExtResource("6_mn4wk")]
+material = SubResource("ShaderMaterial_ra3vj")
+position = Vector2(-13, -62)
+
+[node name="BoozeJuice3" parent="." index="13" instance=ExtResource("6_mn4wk")]
+position = Vector2(25, 43)
+
+[node name="BurningCaffine2" parent="." index="14" instance=ExtResource("4_tatt7")]
+position = Vector2(25, -6)
+
+[node name="ProteinKing" parent="." index="15" instance=ExtResource("9_t47n2")]
+material = SubResource("ShaderMaterial_6c7oo")
+position = Vector2(63, -8)
+
+[node name="ProteinKing2" parent="." index="16" instance=ExtResource("9_t47n2")]
+position = Vector2(101, 45)
