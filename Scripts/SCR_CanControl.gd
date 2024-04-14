@@ -36,17 +36,20 @@ func _mouse_enter():
 			check_mouse_state = true
 			get_parent_can.get_material().set_shader_parameter("strength", true)
 			get_parent_can.get_material().set_shader_parameter("outline_colour", Color.RED)
-			
 		
-		#Play Select Sound
+		# Play Select Sound
 		var get_sfx_player = get_child(1)
 		var get_sound = preload("res://Sounds/SFX_CanSelect.wav")
 		get_sfx_player.stream = get_sound
 		get_sfx_player.playing = true
+		
+		# Send Values for UI
+		Datamanager.send_ui_values.emit(red_val, blue_val, green_val, can_price, true)
 
 func _mouse_exit():
 		check_mouse_state = false
 		get_parent_can.get_material().set_shader_parameter("strength", false)
+		Datamanager.send_ui_values.emit(red_val, blue_val, green_val, can_price, false)
 
 # Check if player can afford new cans
 func _current_money_held(get_current_money):
@@ -71,6 +74,11 @@ func _input(event):
 				var effect_instance: GPUParticles2D = removal_particle.instantiate()
 				effect_instance.position = get_parent_can.position
 				
+				# Play fall sound
+				var get_sfx_player = get_parent_can.get_parent().get_child(4)
+				get_sfx_player.playing = true
+				
+				#Delete Can
 				level_parent.add_child(effect_instance)
 				effect_instance.emitting = true
 				get_parent_can.queue_free()

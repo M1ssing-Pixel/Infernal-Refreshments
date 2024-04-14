@@ -2,6 +2,9 @@ extends Node
 
 var update_money
 
+func _ready():
+	Datamanager.connect("send_ui_values", _send_ui_values)
+
 func _on_game_manager_update_values(get_red, get_blue, get_green, get_money):
 	%TextRed.text = str("[center]", get_red, " / 10")
 	%TextBlue.text = str("[center]", get_blue, " / 10")
@@ -18,3 +21,16 @@ func _on_level_control_level_rules(get_red, get_blue, get_green, get_money, get_
 	%TextRed.text = str("[center]", get_red_start, " / 10")
 	%TextBlue.text = str("[center]", get_blue_start, " / 10")
 	%TextGreen.text = str("[center]", get_green_start, " / 10")
+
+func _send_ui_values(red_val, blue_val, green_val, can_price, active_val) -> void:
+	if active_val == true:
+		%DrinkRefText.text = str("R = ", red_val, "\nB = ", blue_val, 
+								"\nG = ", green_val, "\nPrice = ", can_price)
+	else:
+		%DrinkRefText.text = str("R = ???\nB = ???\nG = ???\nPrice = ???")
+
+# Turn off Vicotry Layer
+func _on_game_manager_change_level():
+	#Fix this crap code later lol
+	var victory_layer = get_parent().get_parent().get_parent().get_child(2)
+	victory_layer.visible = true

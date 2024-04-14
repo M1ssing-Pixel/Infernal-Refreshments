@@ -1,0 +1,225 @@
+[gd_scene load_steps=10 format=3 uid="uid://ck47r42jmdrw4"]
+
+[ext_resource type="Script" path="res://Scripts/SCR_LevelChange.gd" id="1_xbk0r"]
+[ext_resource type="Script" path="res://Scripts/SCR_GameManager.gd" id="2_p6q27"]
+[ext_resource type="Script" path="res://Scripts/SCR_LevelControl.gd" id="3_a88vg"]
+[ext_resource type="Resource" uid="uid://cxdnn8vbpw62h" path="res://Resources/Demon Resources/RES_Tutorial.tres" id="4_swjr7"]
+[ext_resource type="Script" path="res://Scripts/SCR_ValueUI.gd" id="5_wjd5e"]
+[ext_resource type="FontFile" uid="uid://dcqp8lol48rsk" path="res://Font/alagard.ttf" id="6_iwprq"]
+[ext_resource type="Texture2D" uid="uid://bjsq2wb0yrnb0" path="res://Sprites/Vending Machine.png" id="7_1e7q8"]
+[ext_resource type="Texture2D" uid="uid://2g71cq6iuhb1" path="res://Sprites/DemonColourShift.png" id="8_nsocg"]
+[ext_resource type="AudioStream" uid="uid://bbsb8o1hl8rfo" path="res://Sounds/SFX_CanFall.wav.wav" id="9_d1ntw"]
+
+[node name="TestingScene" type="Node2D"]
+script = ExtResource("1_xbk0r")
+
+[node name="MainCamera" type="Camera2D" parent="."]
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("2_p6q27")
+
+[node name="LevelControl" type="Node2D" parent="."]
+script = ExtResource("3_a88vg")
+get_resource = ExtResource("4_swjr7")
+level_money = 10
+starting_red = 1.0
+starting_blue = 1.0
+
+[node name="UIControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ValueCanvas" type="CanvasLayer" parent="UIControl"]
+layer = -1
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="UIControl/ValueCanvas"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameUI" type="Control" parent="UIControl/ValueCanvas/AspectRatioContainer"]
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("5_wjd5e")
+
+[node name="TextRed" type="RichTextLabel" parent="UIControl/ValueCanvas/AspectRatioContainer/GameUI"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -74.0
+offset_top = 11.0
+offset_right = 23.0
+offset_bottom = 51.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("6_iwprq")
+theme_override_fonts/bold_font = ExtResource("6_iwprq")
+theme_override_fonts/italics_font = ExtResource("6_iwprq")
+theme_override_fonts/bold_italics_font = ExtResource("6_iwprq")
+theme_override_fonts/mono_font = ExtResource("6_iwprq")
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "[center]?? / 10"
+
+[node name="TextBlue" type="RichTextLabel" parent="UIControl/ValueCanvas/AspectRatioContainer/GameUI"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -74.0
+offset_top = 34.0
+offset_right = 23.0
+offset_bottom = 74.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("6_iwprq")
+theme_override_fonts/bold_font = ExtResource("6_iwprq")
+theme_override_fonts/italics_font = ExtResource("6_iwprq")
+theme_override_fonts/bold_italics_font = ExtResource("6_iwprq")
+theme_override_fonts/mono_font = ExtResource("6_iwprq")
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "[center]?? / 10"
+
+[node name="TextGreen" type="RichTextLabel" parent="UIControl/ValueCanvas/AspectRatioContainer/GameUI"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -74.0
+offset_top = 57.0
+offset_right = 23.0
+offset_bottom = 97.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("6_iwprq")
+theme_override_fonts/bold_font = ExtResource("6_iwprq")
+theme_override_fonts/italics_font = ExtResource("6_iwprq")
+theme_override_fonts/bold_italics_font = ExtResource("6_iwprq")
+theme_override_fonts/mono_font = ExtResource("6_iwprq")
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "[center]?? / 10"
+
+[node name="DemonText" type="RichTextLabel" parent="UIControl/ValueCanvas/AspectRatioContainer/GameUI"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 3.0
+offset_top = 142.0
+offset_right = 15.0
+offset_bottom = 191.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("6_iwprq")
+theme_override_fonts/bold_font = ExtResource("6_iwprq")
+theme_override_fonts/italics_font = ExtResource("6_iwprq")
+theme_override_fonts/bold_italics_font = ExtResource("6_iwprq")
+theme_override_fonts/mono_font = ExtResource("6_iwprq")
+theme_override_font_sizes/normal_font_size = 13
+text = "1 2 3"
+
+[node name="MoneyText" type="RichTextLabel" parent="UIControl/ValueCanvas/AspectRatioContainer/GameUI"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 195.0
+offset_top = 164.0
+offset_right = 248.0
+offset_bottom = 204.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.231373, 0.501961, 0.301961, 1)
+theme_override_fonts/normal_font = ExtResource("6_iwprq")
+theme_override_fonts/bold_font = ExtResource("6_iwprq")
+theme_override_fonts/italics_font = ExtResource("6_iwprq")
+theme_override_fonts/bold_italics_font = ExtResource("6_iwprq")
+theme_override_fonts/mono_font = ExtResource("6_iwprq")
+theme_override_font_sizes/normal_font_size = 16
+text = "10"
+
+[node name="DrinkRefText" type="RichTextLabel" parent="UIControl/ValueCanvas/AspectRatioContainer/GameUI"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -65.0
+offset_top = 77.0
+offset_right = 16.0
+offset_bottom = 131.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("6_iwprq")
+theme_override_fonts/bold_font = ExtResource("6_iwprq")
+theme_override_fonts/italics_font = ExtResource("6_iwprq")
+theme_override_fonts/bold_italics_font = ExtResource("6_iwprq")
+theme_override_fonts/mono_font = ExtResource("6_iwprq")
+theme_override_font_sizes/normal_font_size = 13
+bbcode_enabled = true
+text = "R = ??? 
+B = ???
+G = ???
+Price = ???"
+
+[node name="VendingLayer" type="CanvasLayer" parent="UIControl"]
+layer = -2
+follow_viewport_enabled = true
+
+[node name="VendingMachine" type="Sprite2D" parent="UIControl/VendingLayer"]
+z_index = -100
+z_as_relative = false
+texture_filter = 1
+texture = ExtResource("7_1e7q8")
+
+[node name="VictoryLayer" type="CanvasLayer" parent="UIControl"]
+visible = false
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="UIControl/VictoryLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VictoryUI" type="Control" parent="UIControl/VictoryLayer/AspectRatioContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="VictoryScreen" type="ColorRect" parent="UIControl/VictoryLayer/AspectRatioContainer/VictoryUI"]
+layout_mode = 0
+offset_left = -70.0
+offset_right = 250.0
+offset_bottom = 180.0
+color = Color(0.105882, 0.0666667, 0.172549, 0.615686)
+
+[node name="Demon" type="Sprite2D" parent="UIControl/VictoryLayer/AspectRatioContainer/VictoryUI"]
+modulate = Color(0.25098, 0.780392, 0.258824, 1)
+texture_filter = 1
+position = Vector2(90, 73)
+texture = ExtResource("8_nsocg")
+
+[node name="ContinueText" type="RichTextLabel" parent="UIControl/VictoryLayer/AspectRatioContainer/VictoryUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = 26.0
+offset_right = 94.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("6_iwprq")
+theme_override_fonts/bold_font = ExtResource("6_iwprq")
+theme_override_fonts/italics_font = ExtResource("6_iwprq")
+theme_override_fonts/bold_italics_font = ExtResource("6_iwprq")
+theme_override_fonts/mono_font = ExtResource("6_iwprq")
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[center]Demon Summoned!
+
+Press \"Enter\" for the next level!"
+
+[node name="FallSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_d1ntw")
+volume_db = -8.0
+pitch_scale = 1.5
+
+[connection signal="change_level" from="GameManager" to="." method="_on_game_manager_change_level"]
+[connection signal="change_level" from="GameManager" to="UIControl/ValueCanvas/AspectRatioContainer/GameUI" method="_on_game_manager_change_level"]
+[connection signal="update_values" from="GameManager" to="UIControl/ValueCanvas/AspectRatioContainer/GameUI" method="_on_game_manager_update_values"]
+[connection signal="LevelRules" from="LevelControl" to="GameManager" method="_on_level_control_level_rules"]
+[connection signal="LevelRules" from="LevelControl" to="UIControl/ValueCanvas/AspectRatioContainer/GameUI" method="_on_level_control_level_rules"]

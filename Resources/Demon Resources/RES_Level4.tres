@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DemonStats" load_steps=2 format=3 uid="uid://dp8ld10bhpibn"]
+
+[ext_resource type="Script" path="res://Resources/Demon Resources/SCR_DemonResource.gd" id="1_lrmby"]
+
+[resource]
+script = ExtResource("1_lrmby")
+red_value = 3
+blue_value = 8
+green_value = 0

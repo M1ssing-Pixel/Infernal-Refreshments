@@ -11,7 +11,8 @@ var demon_blue: float
 var demon_green: float
 
 var level_money: int
-signal Update_Values()
+signal update_values()
+signal change_level()
 
 func _ready():
 	Datamanager.connect("send_can_values", _send_can_values)
@@ -29,7 +30,7 @@ func _send_can_values(red_val, blue_val, green_val, can_cost):
 	global_green = clampf(global_green,0,10)
 	level_money = clampi(level_money,0,100)
 	
-	emit_signal("Update_Values", global_red, global_blue, global_green, level_money)
+	emit_signal("update_values", global_red, global_blue, global_green, level_money)
 	Datamanager.current_money_held.emit(level_money)
 
 # Get Demon values for level & Level Money Count
@@ -52,7 +53,7 @@ func _process(delta):
 	if global_red == demon_red:
 		if global_blue == demon_blue:
 			if global_green == demon_green:
-				print("You Win!")
+				emit_signal("change_level")
 	
 	# Money Management
 	if level_money <= 0:
