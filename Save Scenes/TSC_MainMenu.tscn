@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://cqkb4qhwpj0tx"]
+
+[ext_resource type="Texture2D" uid="uid://c5ao5ctkkkwnv" path="res://Sprites/Vending Machine Main Menu Ver.png" id="1_ewvh2"]
+[ext_resource type="Texture2D" uid="uid://bs1tnlwvhhoje" path="res://Sprites/Summoning Circle.png" id="2_cgkth"]
+[ext_resource type="Script" path="res://Scripts/SCR_MenuPlay.gd" id="2_x7ecq"]
+[ext_resource type="Script" path="res://Scripts/SCR_MenuExit.gd" id="4_fefay"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j1ef5"]
+size = Vector2(53, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ne81g"]
+size = Vector2(48, 29)
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -70.0
+offset_right = -70.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/AspectRatioContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MenuImage" type="Sprite2D" parent="CanvasLayer/AspectRatioContainer/Control"]
+texture_filter = 1
+position = Vector2(160, 90)
+texture = ExtResource("1_ewvh2")
+
+[node name="PlayButton" type="Area2D" parent="CanvasLayer/AspectRatioContainer/Control"]
+script = ExtResource("2_x7ecq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/AspectRatioContainer/Control/PlayButton"]
+position = Vector2(61.5, 92.5)
+shape = SubResource("RectangleShape2D_j1ef5")
+
+[node name="SummonCircle" type="Sprite2D" parent="CanvasLayer/AspectRatioContainer/Control/PlayButton/CollisionShape2D"]
+visible = false
+texture_filter = 1
+position = Vector2(0, 1)
+texture = ExtResource("2_cgkth")
+
+[node name="ExitButton" type="Area2D" parent="CanvasLayer/AspectRatioContainer/Control"]
+script = ExtResource("4_fefay")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/AspectRatioContainer/Control/ExitButton"]
+position = Vector2(62, 149.5)
+shape = SubResource("RectangleShape2D_ne81g")
+
+[node name="SummonCircle" type="Sprite2D" parent="CanvasLayer/AspectRatioContainer/Control/ExitButton/CollisionShape2D"]
+visible = false
+texture_filter = 1
+position = Vector2(-0.5, 0)
+texture = ExtResource("2_cgkth")

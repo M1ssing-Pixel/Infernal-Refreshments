@@ -64,4 +64,4 @@ func  _process(delta):
 		9:
 			phase_one.get_child(1).text = str("\n[center][outline_size={2}]Now then, hurry up and get me outta here!")
 		10:
-			queue_free()
+			get_tree().change_scene_to_file("res://Save Scenes/TSC_TutorialSceneCont.tscn")

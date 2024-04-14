@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://cdunvhr4v4c4s"]
+
+[ext_resource type="PackedScene" uid="uid://ck47r42jmdrw4" path="res://Save Scenes/TSC_TestingScene.tscn" id="1_byvpd"]
+[ext_resource type="PackedScene" uid="uid://t70jmiaoo8kb" path="res://Save Scenes/Cans/TSC_ProteinKing.tscn" id="6_3eif1"]
+[ext_resource type="Shader" path="res://Save Scenes/Cans/SHA_Outline.gdshader" id="7_btu7d"]
+[ext_resource type="PackedScene" uid="uid://chwu5w85qpa0w" path="res://Save Scenes/Cans/TSC_Atomocan.tscn" id="8_dqfct"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kynb2"]
+shader = ExtResource("7_btu7d")
+shader_parameter/strength = false
+shader_parameter/outline_colour = Color(1, 1, 1, 1)
+shader_parameter/outline_depth = 1.0
+
+[node name="Tutorial Scene" instance=ExtResource("1_byvpd")]
+
+[node name="LevelControl" parent="." index="2"]
+level_money = 8
+starting_red = 0.0
+starting_blue = 0.0
+starting_green = 2.0
+
+[node name="ProteinKing" parent="." index="5" instance=ExtResource("6_3eif1")]
+position = Vector2(-13, -8)
+
+[node name="ProteinKing2" parent="." index="6" instance=ExtResource("6_3eif1")]
+material = SubResource("ShaderMaterial_kynb2")
+position = Vector2(63, -60)
+
+[node name="Atomocan" parent="." index="7" instance=ExtResource("8_dqfct")]
+position = Vector2(63, 46)

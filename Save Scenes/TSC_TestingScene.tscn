@@ -135,17 +135,17 @@ text = "10"
 [node name="DrinkRefText" type="RichTextLabel" parent="UIControl/ValueCanvas/AspectRatioContainer/GameUI"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = -65.0
-offset_top = 77.0
-offset_right = 16.0
-offset_bottom = 131.0
+offset_left = -68.0
+offset_top = 83.0
+offset_right = 13.0
+offset_bottom = 137.0
 mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("6_iwprq")
 theme_override_fonts/bold_font = ExtResource("6_iwprq")
 theme_override_fonts/italics_font = ExtResource("6_iwprq")
 theme_override_fonts/bold_italics_font = ExtResource("6_iwprq")
 theme_override_fonts/mono_font = ExtResource("6_iwprq")
-theme_override_font_sizes/normal_font_size = 13
+theme_override_font_sizes/normal_font_size = 10
 bbcode_enabled = true
 text = "R = ??? 
 B = ???
