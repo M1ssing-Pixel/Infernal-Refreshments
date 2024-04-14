@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5rv014m62o0d"]
+
+[ext_resource type="FontFile" uid="uid://dcqp8lol48rsk" path="res://Font/alagard.ttf" id="1_6nv7r"]
+
+[node name="ThanksSceneController" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/AspectRatioContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_6nv7r")
+theme_override_fonts/bold_font = ExtResource("1_6nv7r")
+theme_override_fonts/italics_font = ExtResource("1_6nv7r")
+theme_override_fonts/bold_italics_font = ExtResource("1_6nv7r")
+theme_override_fonts/mono_font = ExtResource("1_6nv7r")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "
+
+[center]Thanks for playing!
+
+"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/AspectRatioContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_6nv7r")
+theme_override_fonts/bold_font = ExtResource("1_6nv7r")
+theme_override_fonts/italics_font = ExtResource("1_6nv7r")
+theme_override_fonts/bold_italics_font = ExtResource("1_6nv7r")
+theme_override_fonts/mono_font = ExtResource("1_6nv7r")
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "
+
+
+
+
+
+
+
+
+
+[center]A LD55 Jam game by: MissingPixel"

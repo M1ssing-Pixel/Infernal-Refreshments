@@ -19,7 +19,7 @@ func _input(event):
 					0:
 						print("Level 0")
 						Datamanager.current_level += 1
-						get_tree().change_scene_to_file("res://Save Scenes/delete_me_scene.tscn")
+						get_tree().change_scene_to_file("res://Save Scenes/TSC_Thanks.tscn")
 					1:
 						print("Level 1")
 						Datamanager.current_level += 1

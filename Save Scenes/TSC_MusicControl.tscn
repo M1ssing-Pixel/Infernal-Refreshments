@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dm11v215w3j0r"]
+
+[ext_resource type="AudioStream" uid="uid://fo2pf44bt7pb" path="res://Sounds/VendingSong.ogg" id="1_2l6nt"]
+[ext_resource type="Script" path="res://Scripts/SCR_MusicControl.gd" id="2_fagyj"]
+
+[node name="MusicController" type="Node"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_2l6nt")
+volume_db = -10.0
+autoplay = true
+script = ExtResource("2_fagyj")
+
+[connection signal="finished" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_finished"]

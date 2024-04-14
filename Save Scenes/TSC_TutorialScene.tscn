@@ -23,9 +23,6 @@ starting_red = 0.0
 starting_blue = 0.0
 starting_green = 2.0
 
-[node name="VictoryScreen" parent="UIControl/VictoryLayer/AspectRatioContainer/VictoryUI" index="0"]
-color = Color(0.105882, 0.0666667, 0.172549, 0.615686)
-
 [node name="TutorialController" type="Control" parent="." index="5"]
 layout_mode = 3
 anchors_preset = 15
