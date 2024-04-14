@@ -1,9 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://chwu5w85qpa0w"]
+[gd_scene load_steps=9 format=3 uid="uid://chwu5w85qpa0w"]
 
 [ext_resource type="Texture2D" uid="uid://d4nsoyjijru34" path="res://Sprites/Atomocan.png" id="1_h63ae"]
+[ext_resource type="Shader" path="res://Save Scenes/Cans/SHA_Outline.gdshader" id="1_xh2du"]
 [ext_resource type="Script" path="res://Scripts/SCR_CanControl.gd" id="2_0ktkw"]
 [ext_resource type="Resource" uid="uid://q8h8dfocyt3s" path="res://Resources/Can Resources/RES_AtomocanStats.tres" id="3_n0ilk"]
 [ext_resource type="PackedScene" uid="uid://bfhfwyq7gn5ff" path="res://Save Scenes/Particle Scenes/TSC_AtomocanParticle.tscn" id="4_c15ir"]
+[ext_resource type="AudioStream" uid="uid://c21e1lj3bd2sq" path="res://Sounds/SFX_CanSelect.wav" id="6_1b4yc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nu1f2"]
+shader = ExtResource("1_xh2du")
+shader_parameter/strength = false
+shader_parameter/outline_colour = Color(1, 1, 1, 1)
+shader_parameter/outline_depth = 1.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bnjf8"]
 radius = 16.0
@@ -11,6 +19,7 @@ height = 46.0
 
 [node name="Atomocan" type="Sprite2D"]
 texture_filter = 1
+material = SubResource("ShaderMaterial_nu1f2")
 texture = ExtResource("1_h63ae")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -22,3 +31,7 @@ removal_particle = ExtResource("4_c15ir")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-4, -1)
 shape = SubResource("CapsuleShape2D_bnjf8")
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="Area2D"]
+stream = ExtResource("6_1b4yc")
+volume_db = -1.0

@@ -7,41 +7,70 @@ var blue_val: float
 var green_val: float
 var can_price: int
 
+# Control Vars
 @export var removal_particle: PackedScene
 var check_mouse_state: bool = false
+var get_parent_can: Sprite2D
+var level_money: int
+
+func _init():
+	Datamanager.connect("current_money_held", _current_money_held)
 
 func _ready():
+	#Resources
 	red_val = get_resource.red_value
 	blue_val = get_resource.blue_value
 	green_val = get_resource.green_value
 	can_price = get_resource.can_price
-	print("R:",red_val," B:",blue_val," G:",green_val)
+	
+	get_parent_can = get_parent()
+	#print("R:",red_val," B:",blue_val," G:",green_val)
 
+# Mouse is hovering or not
 func _mouse_enter():
-	check_mouse_state = true
+		if level_money >= can_price:
+			check_mouse_state = true
+			get_parent_can.get_material().set_shader_parameter("strength", true)
+			get_parent_can.get_material().set_shader_parameter("outline_colour", Color.WHITE)
+		else:
+			check_mouse_state = true
+			get_parent_can.get_material().set_shader_parameter("strength", true)
+			get_parent_can.get_material().set_shader_parameter("outline_colour", Color.RED)
+			
+		
+		#Play Select Sound
+		var get_sfx_player = get_child(1)
+		var get_sound = preload("res://Sounds/SFX_CanSelect.wav")
+		get_sfx_player.stream = get_sound
+		get_sfx_player.playing = true
 
 func _mouse_exit():
-	check_mouse_state = false
+		check_mouse_state = false
+		get_parent_can.get_material().set_shader_parameter("strength", false)
+
+# Check if player can afford new cans
+func _current_money_held(get_current_money):
+	level_money = get_current_money
 
 #If Clicked, Send Values of this object
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT && event.pressed == true:
-			if check_mouse_state == true:
-				Datamanager.Send_Can_Values.emit(red_val, blue_val, green_val, can_price)
+			# Play Fail Sound
+			if  level_money < can_price && check_mouse_state == true:
+				var get_sfx_player = get_child(1)
+				var fail_sound = preload("res://Sounds/SFX_DenyedAction.wav")
+				get_sfx_player.stream = fail_sound
+				get_sfx_player.playing = true
+			
+			# Spawn Particle, send price increases, then delete parent
+			elif check_mouse_state == true:
+				Datamanager.send_can_values.emit(red_val, blue_val, green_val, can_price)
 				
-				# Spawn Particle, then delete parent
-				var invis_parent = get_parent()
-				var level_parent = invis_parent.get_parent()
+				var level_parent = get_parent_can.get_parent()
 				var effect_instance: GPUParticles2D = removal_particle.instantiate()
-				effect_instance.position = invis_parent.position
+				effect_instance.position = get_parent_can.position
 				
 				level_parent.add_child(effect_instance)
 				effect_instance.emitting = true
-				
-				invis_parent.queue_free()
-	
-	# Reload Scene
-	if event is InputEventKey:
-		if event.keycode == KEY_R:
-			get_tree().reload_current_scene()
+				get_parent_can.queue_free()

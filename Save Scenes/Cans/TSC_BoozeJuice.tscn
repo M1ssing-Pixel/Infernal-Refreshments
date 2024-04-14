@@ -1,14 +1,37 @@
-[gd_scene load_steps=5 format=3 uid="uid://c27lnqi410cn6"]
+[gd_scene load_steps=9 format=3 uid="uid://c27lnqi410cn6"]
 
-[ext_resource type="PackedScene" uid="uid://chwu5w85qpa0w" path="res://Save Scenes/Cans/TSC_Atomocan.tscn" id="1_lgyab"]
 [ext_resource type="Texture2D" uid="uid://c66bnjc1vy8dc" path="res://Sprites/BoozeJuice.png" id="2_sypcy"]
 [ext_resource type="Resource" uid="uid://d2ok0jhwvmav" path="res://Resources/Can Resources/RES_BoozeJuiceStats.tres" id="3_pan3u"]
+[ext_resource type="Shader" path="res://Save Scenes/Cans/SHA_Outline.gdshader" id="3_ulgc7"]
+[ext_resource type="Script" path="res://Scripts/SCR_CanControl.gd" id="3_xx4hm"]
 [ext_resource type="PackedScene" uid="uid://4mvbwrgfrwgi" path="res://Save Scenes/Particle Scenes/TSC_BoozeJuiceParticle.tscn" id="4_l6id8"]
+[ext_resource type="AudioStream" uid="uid://c21e1lj3bd2sq" path="res://Sounds/SFX_CanSelect.wav" id="6_5c5lc"]
 
-[node name="BoozeJuice" instance=ExtResource("1_lgyab")]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7oxmd"]
+shader = ExtResource("3_ulgc7")
+shader_parameter/strength = false
+shader_parameter/outline_colour = Color(1, 1, 1, 1)
+shader_parameter/outline_depth = 1.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bnjf8"]
+radius = 16.0
+height = 46.0
+
+[node name="BoozeJuice" type="Sprite2D"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_7oxmd")
 texture = ExtResource("2_sypcy")
 
-[node name="Area2D" parent="." index="0"]
+[node name="Area2D" type="Area2D" parent="."]
 position = Vector2(4, 2)
+script = ExtResource("3_xx4hm")
 get_resource = ExtResource("3_pan3u")
 removal_particle = ExtResource("4_l6id8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-4, -1)
+shape = SubResource("CapsuleShape2D_bnjf8")
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="Area2D"]
+stream = ExtResource("6_5c5lc")
+volume_db = -1.0

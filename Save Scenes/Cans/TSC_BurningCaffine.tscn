@@ -1,14 +1,37 @@
-[gd_scene load_steps=5 format=3 uid="uid://ct0dbe2jsjtsd"]
+[gd_scene load_steps=9 format=3 uid="uid://ct0dbe2jsjtsd"]
 
-[ext_resource type="PackedScene" uid="uid://t70jmiaoo8kb" path="res://Save Scenes/Cans/TSC_ProteinKing.tscn" id="1_yv42a"]
 [ext_resource type="Texture2D" uid="uid://b5ad6h6hnsofe" path="res://Sprites/BurningCaffine.png" id="2_fsgsm"]
 [ext_resource type="Resource" uid="uid://bjb1uhgygla05" path="res://Resources/Can Resources/RES_BurningCaffineStats.tres" id="3_f2wpo"]
+[ext_resource type="Script" path="res://Scripts/SCR_CanControl.gd" id="3_h26lg"]
+[ext_resource type="Shader" path="res://Save Scenes/Cans/SHA_Outline.gdshader" id="3_oiu11"]
 [ext_resource type="PackedScene" uid="uid://cp6cxoe5n215l" path="res://Save Scenes/Particle Scenes/TSC_BurningCaffineParticle.tscn" id="4_8uo8e"]
+[ext_resource type="AudioStream" uid="uid://c21e1lj3bd2sq" path="res://Sounds/SFX_CanSelect.wav" id="6_cr52d"]
 
-[node name="BurningCaffine" instance=ExtResource("1_yv42a")]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o8nn8"]
+shader = ExtResource("3_oiu11")
+shader_parameter/strength = false
+shader_parameter/outline_colour = Color(1, 1, 1, 1)
+shader_parameter/outline_depth = 1.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sor8r"]
+radius = 17.0
+height = 48.0
+
+[node name="BurningCaffine" type="Sprite2D"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_o8nn8")
 texture = ExtResource("2_fsgsm")
 
-[node name="Area2D" parent="." index="0"]
+[node name="Area2D" type="Area2D" parent="."]
 position = Vector2(4, -2)
+script = ExtResource("3_h26lg")
 get_resource = ExtResource("3_f2wpo")
 removal_particle = ExtResource("4_8uo8e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-4, 1)
+shape = SubResource("CapsuleShape2D_sor8r")
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="Area2D"]
+stream = ExtResource("6_cr52d")
+volume_db = -1.0

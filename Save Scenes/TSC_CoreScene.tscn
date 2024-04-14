@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b2tbkshptmuhw"]
+[gd_scene load_steps=14 format=3 uid="uid://b2tbkshptmuhw"]
 
 [ext_resource type="Script" path="res://Scripts/SCR_GameManager.gd" id="1_ny8u1"]
 [ext_resource type="Script" path="res://Scripts/SCR_LevelChange.gd" id="1_tu0os"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://t70jmiaoo8kb" path="res://Save Scenes/Cans/TSC_ProteinKing.tscn" id="9_cxiek"]
 [ext_resource type="PackedScene" uid="uid://ct0dbe2jsjtsd" path="res://Save Scenes/Cans/TSC_BurningCaffine.tscn" id="10_831ne"]
 [ext_resource type="PackedScene" uid="uid://f28g22imipw8" path="res://Save Scenes/Cans/TSC_RocketFuel.tscn" id="11_81sbb"]
+[ext_resource type="PackedScene" uid="uid://b55sgbj28xnh5" path="res://Save Scenes/Cans/TSC_Noki.tscn" id="11_bu3fh"]
+[ext_resource type="PackedScene" uid="uid://c27lnqi410cn6" path="res://Save Scenes/Cans/TSC_BoozeJuice.tscn" id="12_oi4nw"]
 
 [node name="CoreScene" type="Node2D"]
 
@@ -36,6 +38,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="ValueCanvas" type="CanvasLayer" parent="Tutorial Level/UIControl"]
+layer = -1
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="Tutorial Level/UIControl/ValueCanvas"]
 anchors_preset = 15
@@ -118,7 +121,6 @@ text = "1 2 3"
 
 [node name="MoneyText" type="RichTextLabel" parent="Tutorial Level/UIControl/ValueCanvas/AspectRatioContainer/GameUI"]
 unique_name_in_owner = true
-z_index = 9
 layout_mode = 0
 offset_left = 195.0
 offset_top = 164.0
@@ -134,22 +136,33 @@ theme_override_fonts/mono_font = ExtResource("6_ejq1g")
 theme_override_font_sizes/normal_font_size = 16
 text = "10"
 
-[node name="VendingMachine" type="Sprite2D" parent="Tutorial Level/UIControl"]
+[node name="VendingLayer" type="CanvasLayer" parent="Tutorial Level/UIControl"]
+layer = -2
+follow_viewport_enabled = true
+
+[node name="VendingMachine" type="Sprite2D" parent="Tutorial Level/UIControl/VendingLayer"]
 z_index = -100
+z_as_relative = false
 texture_filter = 1
 texture = ExtResource("5_rpmpa")
 
 [node name="Atomocan" parent="Tutorial Level" instance=ExtResource("8_5is6k")]
 position = Vector2(101, -7)
 
-[node name="ProteinKing" parent="Tutorial Level" instance=ExtResource("9_cxiek")]
-position = Vector2(25, -7)
-
-[node name="BurningCaffine" parent="Tutorial Level" instance=ExtResource("10_831ne")]
-position = Vector2(-13, -6)
-
 [node name="RocketFuel" parent="Tutorial Level" instance=ExtResource("11_81sbb")]
 position = Vector2(63, -10)
+
+[node name="BurningCaffine" parent="Tutorial Level" instance=ExtResource("10_831ne")]
+position = Vector2(25, -7)
+
+[node name="Noki" parent="Tutorial Level" instance=ExtResource("11_bu3fh")]
+position = Vector2(-13, -58)
+
+[node name="BoozeJuice" parent="Tutorial Level" instance=ExtResource("12_oi4nw")]
+position = Vector2(25, -63)
+
+[node name="ProteinKing" parent="Tutorial Level" instance=ExtResource("9_cxiek")]
+position = Vector2(-13, -8)
 
 [connection signal="Update_Values" from="Tutorial Level/GameManager" to="Tutorial Level/UIControl/ValueCanvas/AspectRatioContainer/GameUI" method="_on_game_manager_update_values"]
 [connection signal="LevelRules" from="Tutorial Level/LevelControl" to="Tutorial Level/GameManager" method="_on_level_control_level_rules"]

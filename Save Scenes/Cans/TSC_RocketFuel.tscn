@@ -1,16 +1,37 @@
-[gd_scene load_steps=5 format=3 uid="uid://f28g22imipw8"]
+[gd_scene load_steps=9 format=3 uid="uid://f28g22imipw8"]
 
-[ext_resource type="PackedScene" uid="uid://ct0dbe2jsjtsd" path="res://Save Scenes/Cans/TSC_BurningCaffine.tscn" id="1_vimg4"]
 [ext_resource type="Texture2D" uid="uid://dinhbqnutwulc" path="res://Sprites/RocketFuel.png" id="2_udcbl"]
+[ext_resource type="Script" path="res://Scripts/SCR_CanControl.gd" id="3_17r4v"]
+[ext_resource type="Shader" path="res://Save Scenes/Cans/SHA_Outline.gdshader" id="3_202jg"]
 [ext_resource type="Resource" uid="uid://csemlecfwvppk" path="res://Resources/Can Resources/RES_RocketFuelStats.tres" id="3_w056g"]
 [ext_resource type="PackedScene" uid="uid://dmjrbaf63sdv6" path="res://Save Scenes/Particle Scenes/TSC_RocketFuelParticle.tscn" id="4_8cl8b"]
+[ext_resource type="AudioStream" uid="uid://c21e1lj3bd2sq" path="res://Sounds/SFX_CanSelect.wav" id="6_3axf7"]
 
-[node name="RocketFuel" instance=ExtResource("1_vimg4")]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tj122"]
+shader = ExtResource("3_202jg")
+shader_parameter/strength = false
+shader_parameter/outline_colour = Color(1, 1, 1, 1)
+shader_parameter/outline_depth = 1.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bnjf8"]
+radius = 16.0
+height = 46.0
+
+[node name="RocketFuel" type="Sprite2D"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_tj122")
 texture = ExtResource("2_udcbl")
 
-[node name="Area2D" parent="." index="0"]
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(4, -2)
+script = ExtResource("3_17r4v")
 get_resource = ExtResource("3_w056g")
 removal_particle = ExtResource("4_8cl8b")
 
-[node name="CollisionShape2D" parent="Area2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-4, 2)
+shape = SubResource("CapsuleShape2D_bnjf8")
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="Area2D"]
+stream = ExtResource("6_3axf7")
+volume_db = -1.0

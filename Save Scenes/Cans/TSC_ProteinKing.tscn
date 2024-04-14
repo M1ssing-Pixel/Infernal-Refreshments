@@ -1,14 +1,37 @@
-[gd_scene load_steps=5 format=3 uid="uid://t70jmiaoo8kb"]
+[gd_scene load_steps=9 format=3 uid="uid://t70jmiaoo8kb"]
 
-[ext_resource type="PackedScene" uid="uid://c27lnqi410cn6" path="res://Save Scenes/Cans/TSC_BoozeJuice.tscn" id="1_3ty8m"]
+[ext_resource type="Shader" path="res://Save Scenes/Cans/SHA_Outline.gdshader" id="2_0xc0s"]
+[ext_resource type="Script" path="res://Scripts/SCR_CanControl.gd" id="2_2sxx6"]
 [ext_resource type="Texture2D" uid="uid://b5jg6ly3wrgd2" path="res://Sprites/ProteinKing.png" id="2_thmhb"]
 [ext_resource type="Resource" uid="uid://ocx5hv4vo7e5" path="res://Resources/Can Resources/RES_PorteinKingStats.tres" id="3_kfp6p"]
 [ext_resource type="PackedScene" uid="uid://dmbdiom2qjc68" path="res://Save Scenes/Particle Scenes/TSC_ProteinKingParticle.tscn" id="4_44xuu"]
+[ext_resource type="AudioStream" uid="uid://c21e1lj3bd2sq" path="res://Sounds/SFX_CanSelect.wav" id="6_oeugk"]
 
-[node name="ProteinKing" instance=ExtResource("1_3ty8m")]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o8nn8"]
+shader = ExtResource("2_0xc0s")
+shader_parameter/strength = false
+shader_parameter/outline_colour = Color(1, 1, 1, 1)
+shader_parameter/outline_depth = 1.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bnjf8"]
+radius = 16.0
+height = 46.0
+
+[node name="ProteinKing" type="Sprite2D"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_o8nn8")
 texture = ExtResource("2_thmhb")
 
-[node name="Area2D" parent="." index="0"]
+[node name="Area2D" type="Area2D" parent="."]
 position = Vector2(4, -1)
+script = ExtResource("2_2sxx6")
 get_resource = ExtResource("3_kfp6p")
 removal_particle = ExtResource("4_44xuu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-4, -1)
+shape = SubResource("CapsuleShape2D_bnjf8")
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="Area2D"]
+stream = ExtResource("6_oeugk")
+volume_db = -1.0

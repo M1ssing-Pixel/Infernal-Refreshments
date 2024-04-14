@@ -13,3 +13,8 @@ func _input(event):
 				1:
 					print("Level 1")
 					Datamanager.current_level += 1
+	# Reload Scene
+	if event is InputEventKey:
+		if event.keycode == KEY_R:
+			get_tree().reload_current_scene()
+			print("Scene Reloaded")

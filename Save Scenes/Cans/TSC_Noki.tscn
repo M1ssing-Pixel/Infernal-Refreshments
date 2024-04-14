@@ -1,11 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://b55sgbj28xnh5"]
+[gd_scene load_steps=7 format=3 uid="uid://b55sgbj28xnh5"]
 
 [ext_resource type="PackedScene" uid="uid://chwu5w85qpa0w" path="res://Save Scenes/Cans/TSC_Atomocan.tscn" id="1_hgybp"]
 [ext_resource type="Texture2D" uid="uid://c1uww7w0n1o14" path="res://Sprites/Noki.png" id="2_c08ac"]
+[ext_resource type="Shader" path="res://Save Scenes/Cans/SHA_Outline.gdshader" id="3_1572g"]
 [ext_resource type="Resource" uid="uid://dbqt15eob6d7n" path="res://Resources/Can Resources/RES_NokiStats.tres" id="3_abrh5"]
 [ext_resource type="PackedScene" uid="uid://dks6wr7e4ncpg" path="res://Save Scenes/Particle Scenes/TSC_NokiParticle.tscn" id="4_kipoh"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ke2hm"]
+shader = ExtResource("3_1572g")
+shader_parameter/strength = false
+shader_parameter/outline_colour = Color(1, 1, 1, 1)
+shader_parameter/outline_depth = 1.0
+
 [node name="Noki" instance=ExtResource("1_hgybp")]
+material = SubResource("ShaderMaterial_ke2hm")
 texture = ExtResource("2_c08ac")
 
 [node name="Area2D" parent="." index="0"]
