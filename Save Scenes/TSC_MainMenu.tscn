@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cqkb4qhwpj0tx"]
+[gd_scene load_steps=9 format=3 uid="uid://cqkb4qhwpj0tx"]
 
 [ext_resource type="Texture2D" uid="uid://c5ao5ctkkkwnv" path="res://Sprites/Vending Machine Main Menu Ver.png" id="1_ewvh2"]
 [ext_resource type="Texture2D" uid="uid://bs1tnlwvhhoje" path="res://Sprites/Summoning Circle.png" id="2_cgkth"]
 [ext_resource type="Script" path="res://Scripts/SCR_MenuPlay.gd" id="2_x7ecq"]
+[ext_resource type="Script" path="res://Scripts/SummonCircle.gd" id="4_4fqi5"]
+[ext_resource type="AudioStream" uid="uid://cr25b0wsbyjhg" path="res://Sounds/SFX_Magic.wav" id="4_7ss8s"]
 [ext_resource type="Script" path="res://Scripts/SCR_MenuExit.gd" id="4_fefay"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j1ef5"]
@@ -48,6 +50,11 @@ visible = false
 texture_filter = 1
 position = Vector2(0, 1)
 texture = ExtResource("2_cgkth")
+script = ExtResource("4_4fqi5")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/AspectRatioContainer/Control/PlayButton"]
+stream = ExtResource("4_7ss8s")
+volume_db = -5.0
 
 [node name="ExitButton" type="Area2D" parent="CanvasLayer/AspectRatioContainer/Control"]
 script = ExtResource("4_fefay")
@@ -61,3 +68,8 @@ visible = false
 texture_filter = 1
 position = Vector2(-0.5, 0)
 texture = ExtResource("2_cgkth")
+script = ExtResource("4_4fqi5")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/AspectRatioContainer/Control/ExitButton"]
+stream = ExtResource("4_7ss8s")
+volume_db = -5.0

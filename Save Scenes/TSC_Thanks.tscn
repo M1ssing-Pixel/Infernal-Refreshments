@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5rv014m62o0d"]
+[gd_scene load_steps=4 format=3 uid="uid://b5rv014m62o0d"]
 
 [ext_resource type="FontFile" uid="uid://dcqp8lol48rsk" path="res://Font/alagard.ttf" id="1_6nv7r"]
 [ext_resource type="Script" path="res://Scripts/SCR_ReturnToMenu.gd" id="1_7lkl3"]
+[ext_resource type="Script" path="res://Scripts/SCR_FadeTween.gd" id="3_dbc3t"]
 
 [node name="ThanksSceneController" type="Control"]
 layout_mode = 3
@@ -71,3 +72,4 @@ theme_override_fonts/mono_font = ExtResource("1_6nv7r")
 theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
 text = "[center]Press enter"
+script = ExtResource("3_dbc3t")

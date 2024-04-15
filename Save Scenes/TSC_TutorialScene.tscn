@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c125cd0xnwflj"]
+[gd_scene load_steps=12 format=3 uid="uid://c125cd0xnwflj"]
 
 [ext_resource type="PackedScene" uid="uid://ck47r42jmdrw4" path="res://Save Scenes/TSC_TestingScene.tscn" id="1_5s7uk"]
 [ext_resource type="PackedScene" uid="uid://t70jmiaoo8kb" path="res://Save Scenes/Cans/TSC_ProteinKing.tscn" id="2_3dikw"]
@@ -7,7 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://b3rj5gkg7861d" path="res://Sprites/Tutorial Arrow.png" id="3_hhjky"]
 [ext_resource type="Shader" path="res://Save Scenes/Cans/SHA_Outline.gdshader" id="3_tvmmd"]
 [ext_resource type="PackedScene" uid="uid://chwu5w85qpa0w" path="res://Save Scenes/Cans/TSC_Atomocan.tscn" id="3_xiv48"]
+[ext_resource type="Script" path="res://Scripts/SCR_TextScript.gd" id="4_1a2da"]
 [ext_resource type="AudioStream" uid="uid://b4upfg07j4h12" path="res://Sounds/SFX_Accept.wav" id="5_0ebfq"]
+[ext_resource type="Script" path="res://Scripts/SCR_FadeTween.gd" id="7_5hy3r"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kynb2"]
 shader = ExtResource("3_tvmmd")
@@ -84,6 +86,31 @@ text = "
 [center][outline_size={2}]Hey! You! Human!
 
 I'm trapped in this vending machine. Help me outta here!"
+script = ExtResource("4_1a2da")
+
+[node name="Text2" type="RichTextLabel" parent="TutorialController/CanvasLayer/AspectRatioContainer/Tutorial/Phase1" index="2"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 5.0
+offset_right = 135.0
+offset_bottom = 106.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0.760784, 0.180392, 0.32549, 1)
+theme_override_fonts/normal_font = ExtResource("2_32q77")
+theme_override_fonts/bold_font = ExtResource("2_32q77")
+theme_override_fonts/italics_font = ExtResource("2_32q77")
+theme_override_fonts/bold_italics_font = ExtResource("2_32q77")
+theme_override_fonts/mono_font = ExtResource("2_32q77")
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "
+[center][outline_size={2}]Hey! You! Human!
+
+I'm trapped in this vending machine. Help me outta here!"
+script = ExtResource("4_1a2da")
 
 [node name="Phase2" type="Control" parent="TutorialController/CanvasLayer/AspectRatioContainer/Tutorial" index="1"]
 visible = false
@@ -110,14 +137,37 @@ theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
 [center][outline_size={2}]First I should talk about these three values."
+script = ExtResource("4_1a2da")
 
-[node name="TutorialArrow" type="Sprite2D" parent="TutorialController/CanvasLayer/AspectRatioContainer/Tutorial/Phase2" index="1"]
+[node name="Text2" type="RichTextLabel" parent="TutorialController/CanvasLayer/AspectRatioContainer/Tutorial/Phase2" index="1"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 51.0
+offset_right = 181.0
+offset_bottom = 106.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0.760784, 0.180392, 0.32549, 1)
+theme_override_fonts/normal_font = ExtResource("2_32q77")
+theme_override_fonts/bold_font = ExtResource("2_32q77")
+theme_override_fonts/italics_font = ExtResource("2_32q77")
+theme_override_fonts/bold_italics_font = ExtResource("2_32q77")
+theme_override_fonts/mono_font = ExtResource("2_32q77")
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "
+[center][outline_size={2}]First I should talk about these three values."
+script = ExtResource("4_1a2da")
+
+[node name="TutorialArrow" type="Sprite2D" parent="TutorialController/CanvasLayer/AspectRatioContainer/Tutorial/Phase2" index="2"]
 texture_filter = 1
 position = Vector2(-23, 135)
 rotation = -4.71238
 texture = ExtResource("3_hhjky")
 
-[node name="PartialRect" type="ColorRect" parent="TutorialController/CanvasLayer/AspectRatioContainer/Tutorial/Phase2" index="2"]
+[node name="PartialRect" type="ColorRect" parent="TutorialController/CanvasLayer/AspectRatioContainer/Tutorial/Phase2" index="3"]
 z_index = -1
 layout_mode = 0
 offset_left = -70.0
@@ -126,7 +176,7 @@ offset_right = 250.0
 offset_bottom = 180.0
 color = Color(0.105882, 0.0666667, 0.172549, 0.615686)
 
-[node name="PartialRect2" type="ColorRect" parent="TutorialController/CanvasLayer/AspectRatioContainer/Tutorial/Phase2" index="3"]
+[node name="PartialRect2" type="ColorRect" parent="TutorialController/CanvasLayer/AspectRatioContainer/Tutorial/Phase2" index="4"]
 z_index = -1
 layout_mode = 0
 offset_left = 25.0
@@ -159,6 +209,7 @@ theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
 [center][outline_size={2}]These numbers here,  they're your goal, the energy needed to free a demon!"
+script = ExtResource("4_1a2da")
 
 [node name="TutorialArrow" type="Sprite2D" parent="TutorialController/CanvasLayer/AspectRatioContainer/Tutorial/Phase3" index="1"]
 texture_filter = 1
@@ -220,6 +271,7 @@ theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
 [center][outline_size={2}]This is a can, by purchasing these, you'll gain demonic energy."
+script = ExtResource("4_1a2da")
 
 [node name="TutorialArrow" type="Sprite2D" parent="TutorialController/CanvasLayer/AspectRatioContainer/Tutorial/Phase4" index="1"]
 texture_filter = 1
@@ -288,6 +340,7 @@ theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
 [center][outline_size={2}]This shows what enery the can will give you."
+script = ExtResource("4_1a2da")
 
 [node name="TutorialArrow" type="Sprite2D" parent="TutorialController/CanvasLayer/AspectRatioContainer/Tutorial/Phase5" index="1"]
 texture_filter = 1
@@ -347,6 +400,7 @@ theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
 [center][outline_size={2}]But be carful, you only have so much money to work with."
+script = ExtResource("4_1a2da")
 
 [node name="TutorialArrow" type="Sprite2D" parent="TutorialController/CanvasLayer/AspectRatioContainer/Tutorial/Phase6" index="1"]
 texture_filter = 1
@@ -405,6 +459,7 @@ theme_override_fonts/mono_font = ExtResource("2_32q77")
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "[center]Press Enter to Continue"
+script = ExtResource("7_5hy3r")
 
 [node name="ProteinKing" parent="." index="6" instance=ExtResource("2_3dikw")]
 position = Vector2(-13, -8)
@@ -415,3 +470,12 @@ position = Vector2(63, -60)
 
 [node name="Atomocan" parent="." index="8" instance=ExtResource("3_xiv48")]
 position = Vector2(63, 46)
+
+[connection signal="visibility_changed" from="TutorialController/CanvasLayer/AspectRatioContainer/Tutorial/Phase1/Text" to="TutorialController/CanvasLayer/AspectRatioContainer/Tutorial/Phase1/Text" method="_on_visibility_changed"]
+[connection signal="visibility_changed" from="TutorialController/CanvasLayer/AspectRatioContainer/Tutorial/Phase1/Text2" to="TutorialController/CanvasLayer/AspectRatioContainer/Tutorial/Phase1/Text2" method="_on_visibility_changed"]
+[connection signal="visibility_changed" from="TutorialController/CanvasLayer/AspectRatioContainer/Tutorial/Phase2/Text" to="TutorialController/CanvasLayer/AspectRatioContainer/Tutorial/Phase2/Text" method="_on_visibility_changed"]
+[connection signal="visibility_changed" from="TutorialController/CanvasLayer/AspectRatioContainer/Tutorial/Phase2/Text2" to="TutorialController/CanvasLayer/AspectRatioContainer/Tutorial/Phase2/Text2" method="_on_visibility_changed"]
+[connection signal="visibility_changed" from="TutorialController/CanvasLayer/AspectRatioContainer/Tutorial/Phase3/Text" to="TutorialController/CanvasLayer/AspectRatioContainer/Tutorial/Phase3/Text" method="_on_visibility_changed"]
+[connection signal="visibility_changed" from="TutorialController/CanvasLayer/AspectRatioContainer/Tutorial/Phase4/Text" to="TutorialController/CanvasLayer/AspectRatioContainer/Tutorial/Phase4/Text" method="_on_visibility_changed"]
+[connection signal="visibility_changed" from="TutorialController/CanvasLayer/AspectRatioContainer/Tutorial/Phase5/Text" to="TutorialController/CanvasLayer/AspectRatioContainer/Tutorial/Phase5/Text" method="_on_visibility_changed"]
+[connection signal="visibility_changed" from="TutorialController/CanvasLayer/AspectRatioContainer/Tutorial/Phase6/Text" to="TutorialController/CanvasLayer/AspectRatioContainer/Tutorial/Phase6/Text" method="_on_visibility_changed"]

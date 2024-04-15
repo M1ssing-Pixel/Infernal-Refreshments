@@ -39,12 +39,18 @@ func  _process(delta):
 		0:
 			pass
 		1:
-			phase_one.get_child(1).text = str("\n[center][outline_size={2}]Ah, but first I neeed to teach you how to help me.")
+			phase_one.get_child(1).visible = false
+			phase_one.get_child(2).text = str("\n[center][outline_size={2}]Ah, but first I neeed to teach you how to help me.")
+			phase_one.get_child(2).visible = true
 		2:
+			phase_one.get_child(2).visible = false
+			phase_one.get_child(1).visible = true
 			phase_one.visible = false
 			phase_two.visible = true
 		3:
-			phase_two.get_child(0).text = str("\n[center][outline_size={2}]They represent the amount of demonic energy you've collected of each type.")
+			phase_two.get_child(0).visible = false
+			phase_two.get_child(1).text = str("\n[center][outline_size={2}]They represent the amount of demonic energy you've collected of each type.")
+			phase_two.get_child(1).visible = true
 		4:
 			phase_two.visible = false
 			phase_three.visible = true
@@ -62,6 +68,8 @@ func  _process(delta):
 			phase_one.visible = true
 			phase_one.get_child(1).text = str("\n[center][outline_size={2}]Remember, be warry of the order you buy. But if you need too, press the\"R\" button to retry. ")
 		9:
-			phase_one.get_child(1).text = str("\n[center][outline_size={2}]Now then, hurry up and get me outta here!")
+			phase_one.get_child(1).visible = false
+			phase_one.get_child(2).text = str("\n[center][outline_size={2}]Now then, hurry up and get me outta here!")
+			phase_one.get_child(2).visible = true
 		10:
 			get_tree().change_scene_to_file("res://Save Scenes/TSC_TutorialSceneCont.tscn")
