@@ -1,4 +1,8 @@
 extends Node
 
-func _on_finished():
-	self.playing = true
+var get_stream = load("res://Sounds/BGM_VendingSong.ogg")
+
+func _play_music():
+	$Music.stream = get_stream
+	$Music.play()
+	

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ueqcjcdf3h62"]
+
+[ext_resource type="Script" path="res://Scripts/SCR_MusicControl.gd" id="1_pya6t"]
+
+[node name="MusicFix" type="Node"]
+script = ExtResource("1_pya6t")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]

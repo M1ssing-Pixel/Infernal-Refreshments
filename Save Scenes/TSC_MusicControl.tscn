@@ -4,11 +4,9 @@
 [ext_resource type="Script" path="res://Scripts/SCR_MusicControl.gd" id="2_fagyj"]
 
 [node name="MusicController" type="Node"]
+script = ExtResource("2_fagyj")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_2l6nt")
 volume_db = -10.0
 autoplay = true
-script = ExtResource("2_fagyj")
-
-[connection signal="finished" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_finished"]
