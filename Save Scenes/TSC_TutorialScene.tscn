@@ -339,7 +339,7 @@ theme_override_fonts/mono_font = ExtResource("2_32q77")
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
-[center][outline_size={2}]This shows what enery the can will give you."
+[center][outline_size={2}]This shows what energy the can will give you."
 script = ExtResource("4_1a2da")
 
 [node name="TutorialArrow" type="Sprite2D" parent="TutorialController/CanvasLayer/AspectRatioContainer/Tutorial/Phase5" index="1"]
@@ -399,7 +399,7 @@ theme_override_fonts/mono_font = ExtResource("2_32q77")
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "
-[center][outline_size={2}]But be carful, you only have so much money to work with."
+[center][outline_size={2}]But be careful, you only have so much money to work with."
 script = ExtResource("4_1a2da")
 
 [node name="TutorialArrow" type="Sprite2D" parent="TutorialController/CanvasLayer/AspectRatioContainer/Tutorial/Phase6" index="1"]

@@ -40,7 +40,7 @@ func  _process(delta):
 			pass
 		1:
 			phase_one.get_child(1).visible = false
-			phase_one.get_child(2).text = str("\n[center][outline_size={2}]Ah, but first I neeed to teach you how to help me.")
+			phase_one.get_child(2).text = str("\n[center][outline_size={2}]Ah, but first I need to teach you how to help me.")
 			phase_one.get_child(2).visible = true
 		2:
 			phase_one.get_child(2).visible = false
