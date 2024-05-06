@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="Infernal Refreshments"
-run/main_scene="res://Save Scenes/TSC_CoreScene.tscn"
+run/main_scene="res://Scenes/TSC_CoreScene.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 
 [autoload]
 
 Datamanager="*res://Scripts/SCR_Datamanager.gd"
-TscTemp="*res://Save Scenes/TSC_Temp.tscn"
+TscTemp="*res://Scenes/TSC_Temp.tscn"
 
 [display]
 

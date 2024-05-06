@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://b5ad6h6hnsofe" path="res://Sprites/BurningCaffine.png" id="2_fsgsm"]
 [ext_resource type="Resource" uid="uid://bjb1uhgygla05" path="res://Resources/Can Resources/RES_BurningCaffineStats.tres" id="3_f2wpo"]
 [ext_resource type="Script" path="res://Scripts/SCR_CanControl.gd" id="3_h26lg"]
-[ext_resource type="Shader" path="res://Save Scenes/Cans/SHA_Outline.gdshader" id="3_oiu11"]
-[ext_resource type="PackedScene" uid="uid://cp6cxoe5n215l" path="res://Save Scenes/Particle Scenes/TSC_BurningCaffineParticle.tscn" id="4_8uo8e"]
+[ext_resource type="Shader" path="res://Scenes/Cans/SHA_Outline.gdshader" id="3_oiu11"]
+[ext_resource type="PackedScene" uid="uid://cp6cxoe5n215l" path="res://Scenes/Particle Scenes/TSC_BurningCaffineParticle.tscn" id="4_8uo8e"]
 [ext_resource type="AudioStream" uid="uid://c21e1lj3bd2sq" path="res://Sounds/SFX_CanSelect.wav" id="6_cr52d"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o8nn8"]

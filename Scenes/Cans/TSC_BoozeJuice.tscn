@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://c66bnjc1vy8dc" path="res://Sprites/BoozeJuice.png" id="2_sypcy"]
 [ext_resource type="Resource" uid="uid://d2ok0jhwvmav" path="res://Resources/Can Resources/RES_BoozeJuiceStats.tres" id="3_pan3u"]
-[ext_resource type="Shader" path="res://Save Scenes/Cans/SHA_Outline.gdshader" id="3_ulgc7"]
+[ext_resource type="Shader" path="res://Scenes/Cans/SHA_Outline.gdshader" id="3_ulgc7"]
 [ext_resource type="Script" path="res://Scripts/SCR_CanControl.gd" id="3_xx4hm"]
-[ext_resource type="PackedScene" uid="uid://4mvbwrgfrwgi" path="res://Save Scenes/Particle Scenes/TSC_BoozeJuiceParticle.tscn" id="4_l6id8"]
+[ext_resource type="PackedScene" uid="uid://4mvbwrgfrwgi" path="res://Scenes/Particle Scenes/TSC_BoozeJuiceParticle.tscn" id="4_l6id8"]
 [ext_resource type="AudioStream" uid="uid://c21e1lj3bd2sq" path="res://Sounds/SFX_CanSelect.wav" id="6_5c5lc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7oxmd"]

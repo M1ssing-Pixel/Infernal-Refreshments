@@ -24,4 +24,4 @@ func _input(event):
 		if event.button_index == MOUSE_BUTTON_LEFT && event.is_pressed() == true:
 			if is_colliding == true:
 				audio_player.play()
-				get_tree().change_scene_to_file("res://Save Scenes/TSC_TutorialScene.tscn")
+				get_tree().change_scene_to_file("res://Scenes/TSC_TutorialScene.tscn")

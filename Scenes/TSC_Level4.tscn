@@ -1,14 +1,14 @@
 [gd_scene load_steps=14 format=3 uid="uid://dfemg06bxwm6n"]
 
-[ext_resource type="PackedScene" uid="uid://ck47r42jmdrw4" path="res://Save Scenes/TSC_TestingScene.tscn" id="1_6318d"]
+[ext_resource type="PackedScene" uid="uid://ck47r42jmdrw4" path="res://Scenes/TSC_TestingScene.tscn" id="1_6318d"]
 [ext_resource type="Resource" uid="uid://dp8ld10bhpibn" path="res://Resources/Demon Resources/RES_Level4.tres" id="2_amvxv"]
-[ext_resource type="PackedScene" uid="uid://c27lnqi410cn6" path="res://Save Scenes/Cans/TSC_BoozeJuice.tscn" id="3_3tu0j"]
-[ext_resource type="PackedScene" uid="uid://t70jmiaoo8kb" path="res://Save Scenes/Cans/TSC_ProteinKing.tscn" id="4_mcchl"]
-[ext_resource type="PackedScene" uid="uid://ct0dbe2jsjtsd" path="res://Save Scenes/Cans/TSC_BurningCaffine.tscn" id="5_5nw7j"]
-[ext_resource type="PackedScene" uid="uid://chwu5w85qpa0w" path="res://Save Scenes/Cans/TSC_Atomocan.tscn" id="6_m1aqk"]
-[ext_resource type="PackedScene" uid="uid://f28g22imipw8" path="res://Save Scenes/Cans/TSC_RocketFuel.tscn" id="7_enxum"]
-[ext_resource type="Shader" path="res://Save Scenes/Cans/SHA_Outline.gdshader" id="7_kw0ix"]
-[ext_resource type="PackedScene" uid="uid://b55sgbj28xnh5" path="res://Save Scenes/Cans/TSC_Noki.tscn" id="8_qfdbs"]
+[ext_resource type="PackedScene" uid="uid://c27lnqi410cn6" path="res://Scenes/Cans/TSC_BoozeJuice.tscn" id="3_3tu0j"]
+[ext_resource type="PackedScene" uid="uid://t70jmiaoo8kb" path="res://Scenes/Cans/TSC_ProteinKing.tscn" id="4_mcchl"]
+[ext_resource type="PackedScene" uid="uid://ct0dbe2jsjtsd" path="res://Scenes/Cans/TSC_BurningCaffine.tscn" id="5_5nw7j"]
+[ext_resource type="PackedScene" uid="uid://chwu5w85qpa0w" path="res://Scenes/Cans/TSC_Atomocan.tscn" id="6_m1aqk"]
+[ext_resource type="PackedScene" uid="uid://f28g22imipw8" path="res://Scenes/Cans/TSC_RocketFuel.tscn" id="7_enxum"]
+[ext_resource type="Shader" path="res://Scenes/Cans/SHA_Outline.gdshader" id="7_kw0ix"]
+[ext_resource type="PackedScene" uid="uid://b55sgbj28xnh5" path="res://Scenes/Cans/TSC_Noki.tscn" id="8_qfdbs"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u0ass"]
 shader = ExtResource("7_kw0ix")

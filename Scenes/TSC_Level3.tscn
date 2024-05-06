@@ -1,13 +1,13 @@
 [gd_scene load_steps=12 format=3 uid="uid://qsv6ic23ehrl"]
 
-[ext_resource type="PackedScene" uid="uid://ck47r42jmdrw4" path="res://Save Scenes/TSC_TestingScene.tscn" id="1_o8wxd"]
+[ext_resource type="PackedScene" uid="uid://ck47r42jmdrw4" path="res://Scenes/TSC_TestingScene.tscn" id="1_o8wxd"]
 [ext_resource type="Resource" uid="uid://b5ji7ejgva4ty" path="res://Resources/Demon Resources/RES_Level3.tres" id="2_qthik"]
-[ext_resource type="PackedScene" uid="uid://chwu5w85qpa0w" path="res://Save Scenes/Cans/TSC_Atomocan.tscn" id="3_knmvb"]
-[ext_resource type="PackedScene" uid="uid://b55sgbj28xnh5" path="res://Save Scenes/Cans/TSC_Noki.tscn" id="4_c75fj"]
-[ext_resource type="Shader" path="res://Save Scenes/Cans/SHA_Outline.gdshader" id="4_k4g6e"]
-[ext_resource type="PackedScene" uid="uid://f28g22imipw8" path="res://Save Scenes/Cans/TSC_RocketFuel.tscn" id="5_1gdqp"]
-[ext_resource type="PackedScene" uid="uid://t70jmiaoo8kb" path="res://Save Scenes/Cans/TSC_ProteinKing.tscn" id="6_o62ss"]
-[ext_resource type="PackedScene" uid="uid://ct0dbe2jsjtsd" path="res://Save Scenes/Cans/TSC_BurningCaffine.tscn" id="7_tc3rw"]
+[ext_resource type="PackedScene" uid="uid://chwu5w85qpa0w" path="res://Scenes/Cans/TSC_Atomocan.tscn" id="3_knmvb"]
+[ext_resource type="PackedScene" uid="uid://b55sgbj28xnh5" path="res://Scenes/Cans/TSC_Noki.tscn" id="4_c75fj"]
+[ext_resource type="Shader" path="res://Scenes/Cans/SHA_Outline.gdshader" id="4_k4g6e"]
+[ext_resource type="PackedScene" uid="uid://f28g22imipw8" path="res://Scenes/Cans/TSC_RocketFuel.tscn" id="5_1gdqp"]
+[ext_resource type="PackedScene" uid="uid://t70jmiaoo8kb" path="res://Scenes/Cans/TSC_ProteinKing.tscn" id="6_o62ss"]
+[ext_resource type="PackedScene" uid="uid://ct0dbe2jsjtsd" path="res://Scenes/Cans/TSC_BurningCaffine.tscn" id="7_tc3rw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lph0r"]
 shader = ExtResource("4_k4g6e")

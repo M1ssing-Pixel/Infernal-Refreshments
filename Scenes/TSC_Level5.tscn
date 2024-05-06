@@ -1,15 +1,15 @@
 [gd_scene load_steps=18 format=3 uid="uid://cx31cfrs2kms4"]
 
-[ext_resource type="PackedScene" uid="uid://ck47r42jmdrw4" path="res://Save Scenes/TSC_TestingScene.tscn" id="1_s24na"]
+[ext_resource type="PackedScene" uid="uid://ck47r42jmdrw4" path="res://Scenes/TSC_TestingScene.tscn" id="1_s24na"]
 [ext_resource type="Resource" uid="uid://kg3ccdxhhjcv" path="res://Resources/Demon Resources/RES_Level5.tres" id="2_6n0ni"]
 [ext_resource type="Texture2D" uid="uid://b81bpte3fgnxw" path="res://Sprites/Demon.png" id="2_d4kw4"]
-[ext_resource type="PackedScene" uid="uid://ct0dbe2jsjtsd" path="res://Save Scenes/Cans/TSC_BurningCaffine.tscn" id="4_tatt7"]
-[ext_resource type="Shader" path="res://Save Scenes/Cans/SHA_Outline.gdshader" id="5_nkbh7"]
-[ext_resource type="PackedScene" uid="uid://chwu5w85qpa0w" path="res://Save Scenes/Cans/TSC_Atomocan.tscn" id="5_xvige"]
-[ext_resource type="PackedScene" uid="uid://c27lnqi410cn6" path="res://Save Scenes/Cans/TSC_BoozeJuice.tscn" id="6_mn4wk"]
-[ext_resource type="PackedScene" uid="uid://b55sgbj28xnh5" path="res://Save Scenes/Cans/TSC_Noki.tscn" id="7_lxwpm"]
-[ext_resource type="PackedScene" uid="uid://f28g22imipw8" path="res://Save Scenes/Cans/TSC_RocketFuel.tscn" id="8_8af4t"]
-[ext_resource type="PackedScene" uid="uid://t70jmiaoo8kb" path="res://Save Scenes/Cans/TSC_ProteinKing.tscn" id="9_t47n2"]
+[ext_resource type="PackedScene" uid="uid://ct0dbe2jsjtsd" path="res://Scenes/Cans/TSC_BurningCaffine.tscn" id="4_tatt7"]
+[ext_resource type="Shader" path="res://Scenes/Cans/SHA_Outline.gdshader" id="5_nkbh7"]
+[ext_resource type="PackedScene" uid="uid://chwu5w85qpa0w" path="res://Scenes/Cans/TSC_Atomocan.tscn" id="5_xvige"]
+[ext_resource type="PackedScene" uid="uid://c27lnqi410cn6" path="res://Scenes/Cans/TSC_BoozeJuice.tscn" id="6_mn4wk"]
+[ext_resource type="PackedScene" uid="uid://b55sgbj28xnh5" path="res://Scenes/Cans/TSC_Noki.tscn" id="7_lxwpm"]
+[ext_resource type="PackedScene" uid="uid://f28g22imipw8" path="res://Scenes/Cans/TSC_RocketFuel.tscn" id="8_8af4t"]
+[ext_resource type="PackedScene" uid="uid://t70jmiaoo8kb" path="res://Scenes/Cans/TSC_ProteinKing.tscn" id="9_t47n2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_asj0p"]
 shader = ExtResource("5_nkbh7")

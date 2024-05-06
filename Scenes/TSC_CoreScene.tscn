@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b2tbkshptmuhw"]
 
 [ext_resource type="Script" path="res://Scripts/SCR_MusicStart.gd" id="1_bahwp"]
-[ext_resource type="PackedScene" uid="uid://cqkb4qhwpj0tx" path="res://Save Scenes/TSC_MainMenu.tscn" id="1_g1jh5"]
+[ext_resource type="PackedScene" uid="uid://cqkb4qhwpj0tx" path="res://Scenes/TSC_MainMenu.tscn" id="1_g1jh5"]
 
 [node name="CoreScene" type="Node2D"]
 script = ExtResource("1_bahwp")

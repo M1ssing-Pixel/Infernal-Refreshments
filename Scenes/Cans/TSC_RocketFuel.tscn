@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://dinhbqnutwulc" path="res://Sprites/RocketFuel.png" id="2_udcbl"]
 [ext_resource type="Script" path="res://Scripts/SCR_CanControl.gd" id="3_17r4v"]
-[ext_resource type="Shader" path="res://Save Scenes/Cans/SHA_Outline.gdshader" id="3_202jg"]
+[ext_resource type="Shader" path="res://Scenes/Cans/SHA_Outline.gdshader" id="3_202jg"]
 [ext_resource type="Resource" uid="uid://csemlecfwvppk" path="res://Resources/Can Resources/RES_RocketFuelStats.tres" id="3_w056g"]
-[ext_resource type="PackedScene" uid="uid://dmjrbaf63sdv6" path="res://Save Scenes/Particle Scenes/TSC_RocketFuelParticle.tscn" id="4_8cl8b"]
+[ext_resource type="PackedScene" uid="uid://dmjrbaf63sdv6" path="res://Scenes/Particle Scenes/TSC_RocketFuelParticle.tscn" id="4_8cl8b"]
 [ext_resource type="AudioStream" uid="uid://c21e1lj3bd2sq" path="res://Sounds/SFX_CanSelect.wav" id="6_3axf7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tj122"]

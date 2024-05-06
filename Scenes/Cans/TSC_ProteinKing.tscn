@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://t70jmiaoo8kb"]
 
-[ext_resource type="Shader" path="res://Save Scenes/Cans/SHA_Outline.gdshader" id="2_0xc0s"]
+[ext_resource type="Shader" path="res://Scenes/Cans/SHA_Outline.gdshader" id="2_0xc0s"]
 [ext_resource type="Script" path="res://Scripts/SCR_CanControl.gd" id="2_2sxx6"]
 [ext_resource type="Texture2D" uid="uid://b5jg6ly3wrgd2" path="res://Sprites/ProteinKing.png" id="2_thmhb"]
 [ext_resource type="Resource" uid="uid://ocx5hv4vo7e5" path="res://Resources/Can Resources/RES_PorteinKingStats.tres" id="3_kfp6p"]
-[ext_resource type="PackedScene" uid="uid://dmbdiom2qjc68" path="res://Save Scenes/Particle Scenes/TSC_ProteinKingParticle.tscn" id="4_44xuu"]
+[ext_resource type="PackedScene" uid="uid://dmbdiom2qjc68" path="res://Scenes/Particle Scenes/TSC_ProteinKingParticle.tscn" id="4_44xuu"]
 [ext_resource type="AudioStream" uid="uid://c21e1lj3bd2sq" path="res://Sounds/SFX_CanSelect.wav" id="6_oeugk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o8nn8"]

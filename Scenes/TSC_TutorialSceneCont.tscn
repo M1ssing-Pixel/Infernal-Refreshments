@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://cdunvhr4v4c4s"]
 
-[ext_resource type="PackedScene" uid="uid://ck47r42jmdrw4" path="res://Save Scenes/TSC_TestingScene.tscn" id="1_byvpd"]
-[ext_resource type="PackedScene" uid="uid://t70jmiaoo8kb" path="res://Save Scenes/Cans/TSC_ProteinKing.tscn" id="6_3eif1"]
-[ext_resource type="Shader" path="res://Save Scenes/Cans/SHA_Outline.gdshader" id="7_btu7d"]
-[ext_resource type="PackedScene" uid="uid://chwu5w85qpa0w" path="res://Save Scenes/Cans/TSC_Atomocan.tscn" id="8_dqfct"]
+[ext_resource type="PackedScene" uid="uid://ck47r42jmdrw4" path="res://Scenes/TSC_TestingScene.tscn" id="1_byvpd"]
+[ext_resource type="PackedScene" uid="uid://t70jmiaoo8kb" path="res://Scenes/Cans/TSC_ProteinKing.tscn" id="6_3eif1"]
+[ext_resource type="Shader" path="res://Scenes/Cans/SHA_Outline.gdshader" id="7_btu7d"]
+[ext_resource type="PackedScene" uid="uid://chwu5w85qpa0w" path="res://Scenes/Cans/TSC_Atomocan.tscn" id="8_dqfct"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kynb2"]
 shader = ExtResource("7_btu7d")

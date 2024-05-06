@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dmjrbaf63sdv6"]
 
-[ext_resource type="PackedScene" uid="uid://cp6cxoe5n215l" path="res://Save Scenes/Particle Scenes/TSC_BurningCaffineParticle.tscn" id="1_fgmsb"]
+[ext_resource type="PackedScene" uid="uid://cp6cxoe5n215l" path="res://Scenes/Particle Scenes/TSC_BurningCaffineParticle.tscn" id="1_fgmsb"]
 [ext_resource type="Texture2D" uid="uid://dinhbqnutwulc" path="res://Sprites/RocketFuel.png" id="2_lhy2t"]
 
 [node name="RemovalParticle" instance=ExtResource("1_fgmsb")]
